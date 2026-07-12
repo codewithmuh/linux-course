@@ -24,3 +24,6 @@ exports/
 # Temp
 *.log
 tmp/
+
+# Creator-internal production notes (titles, thumbnails, hooks, shorts) — never publish
+_production/

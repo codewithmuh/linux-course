@@ -1,57 +1,36 @@
-# Linux for DevOps — Course Repo (devopsbymuh)
+# Linux for DevOps 🐧
 
-The complete **Linux & Bash** course for the [devopsbymuh](https://youtube.com/@codewithmuh) channel — tool #1 in the DevOps learning roadmap. This repo holds the production plan, demos, scripts, and cheat sheets for the whole course.
+The companion repo for the **Linux for DevOps** course on YouTube by [devopsbymuh](https://youtube.com/@codewithmuh).
 
-**18 exceptional videos > 30 average videos.** Every video is planned to feel premium and to leave the viewer with a real, usable skill.
+Watch the videos to learn, then use this repo as your **reference**: concept notes, command tables, diagrams, cheat sheets, and copy-paste-ready scripts for every lesson.
 
-## The premium video format
+> 📺 **Full playlist:** _link coming soon_
 
-Every video follows the same six-part shape:
+## What's inside
 
-| Part | Length | What it is |
+The course is **5 modules · 18 lessons**, beginner → production-ready. Each lesson has its own folder with a `README.md` (concepts + commands + cheat sheet) and, where useful, runnable `scripts/`.
+
+| Module | Lessons | |
 |---|---|---|
-| 🎨 Animated slides | 3–5 min | Clean motion-graphic concept explanation |
-| 💻 Hands-on demo | 10–15 min | Real terminal, run every command live |
-| 🏢 Production example | — | How this is actually used on the job |
-| 📝 Exercise / challenge | — | Viewer does it themselves |
-| 📄 Cheat sheet | — | Optional downloadable reference |
-| 🎯 Next-lesson preview | — | Hook into the following video |
+| **1 · Linux Basics** | 01–04 | [`01-linux-basics`](01-linux-basics) |
+| **2 · Linux Administration** | 05–09 | [`02-linux-administration`](02-linux-administration) |
+| **3 · Networking** | 10–12 | [`03-networking`](03-networking) |
+| **4 · Bash Scripting** | 13–15 | [`04-bash-scripting`](04-bash-scripting) |
+| **5 · Linux for DevOps** | 16–18 | [`05-linux-for-devops`](05-linux-for-devops) |
 
-Target length per video: **~18–20 min**.
+The final lesson is a **capstone**: deploy a secured, monitored, application-serving Linux server from scratch.
 
-## Course map (5 modules · 18 videos)
+## How to use this repo
 
-| Module | Videos | Folder |
-|---|---|---|
-| 1 · Linux Basics | 01–04 | [`01-linux-basics`](01-linux-basics) |
-| 2 · Linux Administration | 05–09 | [`02-linux-administration`](02-linux-administration) |
-| 3 · Networking | 10–12 | [`03-networking`](03-networking) |
-| 4 · Bash Scripting | 13–15 | [`04-bash-scripting`](04-bash-scripting) |
-| 5 · Linux for DevOps | 16–18 | [`05-linux-for-devops`](05-linux-for-devops) |
+1. Open the module → lesson folder for the video you're watching.
+2. Follow along with the commands in the lesson `README.md`.
+3. Grab the cheat sheet and any `scripts/` you want to keep.
+4. Try the **practice challenge** at the end of each lesson.
 
-The course ends with a **capstone**: deploy a production Linux server (video 18) using everything learned.
+## Roadmap
 
-## Repo structure
+Linux is the first tool in a larger DevOps journey. Coming next on the channel: **Git & GitHub → Docker → Docker Compose → GitHub Actions → AWS → Kubernetes** and beyond.
 
-```
-NN-module-name/
-  README.md                 Module goal + video list
-  NN-video-slug/
-    plan.md                 Production plan (premium 6-part format)  ← start here
-    demo/                   Scripts/files used in the live demo (added when producing)
-    cheatsheet.md           Downloadable reference (added when producing)
-_templates/
-  video-plan.md             Copy this to start a new video plan
-```
+## Contributing
 
-## Producing a video
-
-1. Open the video's `plan.md` (already seeded with topics + the premium format).
-2. Flesh out the slides outline and the exact demo commands.
-3. Drop demo scripts into that video's `demo/` folder.
-4. Write the `cheatsheet.md`.
-5. Generate packaging (title, thumbnail, description, shorts) — the `/yt-*` skills in the planning workspace, rebranded to **devopsbymuh**.
-
-## Related
-
-Channel strategy + full tool roadmap live in the planning workspace repo `~/youtube-devopsbymuh` (`channel/strategy.md`, `channel/learning-roadmap.md`). This Linux course is the first course of Phase 1.
+Spotted a typo or a better example? Issues and PRs are welcome. 🙌
