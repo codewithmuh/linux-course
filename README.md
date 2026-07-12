@@ -23,24 +23,23 @@ Target length per video: **~18–20 min**.
 
 | Module | Videos | Folder |
 |---|---|---|
-| 1 · Linux Basics | 01–04 | [`modules/01-linux-basics`](modules/01-linux-basics) |
-| 2 · Linux Administration | 05–09 | [`modules/02-linux-administration`](modules/02-linux-administration) |
-| 3 · Networking | 10–12 | [`modules/03-networking`](modules/03-networking) |
-| 4 · Bash Scripting | 13–15 | [`modules/04-bash-scripting`](modules/04-bash-scripting) |
-| 5 · Linux for DevOps | 16–18 | [`modules/05-linux-for-devops`](modules/05-linux-for-devops) |
+| 1 · Linux Basics | 01–04 | [`01-linux-basics`](01-linux-basics) |
+| 2 · Linux Administration | 05–09 | [`02-linux-administration`](02-linux-administration) |
+| 3 · Networking | 10–12 | [`03-networking`](03-networking) |
+| 4 · Bash Scripting | 13–15 | [`04-bash-scripting`](04-bash-scripting) |
+| 5 · Linux for DevOps | 16–18 | [`05-linux-for-devops`](05-linux-for-devops) |
 
 The course ends with a **capstone**: deploy a production Linux server (video 18) using everything learned.
 
 ## Repo structure
 
 ```
-modules/
-  NN-module-name/
-    README.md               Module goal + video list
-    NN-video-slug/
-      plan.md               Production plan (premium 6-part format)  ← start here
-      demo/                 Scripts/files used in the live demo (added when producing)
-      cheatsheet.md         Downloadable reference (added when producing)
+NN-module-name/
+  README.md                 Module goal + video list
+  NN-video-slug/
+    plan.md                 Production plan (premium 6-part format)  ← start here
+    demo/                   Scripts/files used in the live demo (added when producing)
+    cheatsheet.md           Downloadable reference (added when producing)
 _templates/
   video-plan.md             Copy this to start a new video plan
 ```
