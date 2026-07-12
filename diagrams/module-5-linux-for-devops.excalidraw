@@ -2226,8 +2226,8 @@
    "link": null,
    "locked": false,
    "type": "text",
-   "x": 819.92,
-   "y": 586,
+   "x": 818.92,
+   "y": 564,
    "width": 76.16,
    "height": 15.62,
    "text": "HTTP/HTTPS",
@@ -2886,18 +2886,18 @@
    "link": null,
    "locked": false,
    "type": "arrow",
-   "x": 1420,
-   "y": 652,
-   "width": 140,
-   "height": 46,
+   "x": 1506,
+   "y": 634,
+   "width": 50,
+   "height": 56,
    "points": [
     [
      0,
      0
     ],
     [
-     140,
-     46
+     50,
+     56
     ]
    ],
    "lastCommittedPoint": null,
@@ -2928,8 +2928,8 @@
    "link": null,
    "locked": false,
    "type": "text",
-   "x": 1470,
-   "y": 662,
+   "x": 1462,
+   "y": 676,
    "width": 25.56,
    "height": 15.62,
    "text": "logs",

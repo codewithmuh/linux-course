@@ -2815,7 +2815,7 @@
    "type": "rectangle",
    "x": 1540,
    "y": 524,
-   "width": 140,
+   "width": 136,
    "height": 74
   },
   {
@@ -2840,19 +2840,19 @@
    "link": null,
    "locked": false,
    "type": "text",
-   "x": 1561.4,
-   "y": 535.69,
-   "width": 97.2,
-   "height": 50.64,
+   "x": 1561.21,
+   "y": 536.62,
+   "width": 93.58,
+   "height": 48.75,
    "text": "You\nprivate key\n(never leaves)",
    "originalText": "You\nprivate key\n(never leaves)",
-   "fontSize": 13.5,
+   "fontSize": 13,
    "fontFamily": 2,
    "textAlign": "center",
    "verticalAlign": "top",
    "containerId": null,
    "lineHeight": 1.25,
-   "baseline": 11.81
+   "baseline": 11.38
   },
   {
    "version": 1,
@@ -2876,9 +2876,9 @@
    "link": null,
    "locked": false,
    "type": "arrow",
-   "x": 1690,
+   "x": 1682,
    "y": 561,
-   "width": 48,
+   "width": 42,
    "height": 0,
    "points": [
     [
@@ -2886,7 +2886,7 @@
      0
     ],
     [
-     48,
+     42,
      0
     ]
    ],
@@ -2920,9 +2920,9 @@
    "link": null,
    "locked": false,
    "type": "rectangle",
-   "x": 1746,
+   "x": 1730,
    "y": 524,
-   "width": 112,
+   "width": 152,
    "height": 74
   },
   {
@@ -2947,19 +2947,19 @@
    "link": null,
    "locked": false,
    "type": "text",
-   "x": 1762.52,
-   "y": 535.69,
-   "width": 78.97,
-   "height": 50.64,
-   "text": "Server\nauthorized_\nkeys",
-   "originalText": "Server\nauthorized_\nkeys",
-   "fontSize": 13.5,
+   "x": 1755.27,
+   "y": 537.56,
+   "width": 101.47,
+   "height": 46.86,
+   "text": "Server\nauthorized_keys\n(public key)",
+   "originalText": "Server\nauthorized_keys\n(public key)",
+   "fontSize": 12.5,
    "fontFamily": 2,
    "textAlign": "center",
    "verticalAlign": "top",
    "containerId": null,
    "lineHeight": 1.25,
-   "baseline": 11.81
+   "baseline": 10.94
   },
   {
    "version": 1,

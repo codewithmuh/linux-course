@@ -2472,17 +2472,17 @@
    "type": "text",
    "x": 64,
    "y": 646,
-   "width": 694.12,
-   "height": 20.0,
-   "text": "600  keys & secrets     \u00b7     644  configs     \u00b7     755  scripts & dirs",
-   "originalText": "600  keys & secrets     \u00b7     644  configs     \u00b7     755  scripts & dirs",
-   "fontSize": 16,
+   "width": 497.86,
+   "height": 18.12,
+   "text": "600 keys & secrets  \u00b7  644 configs  \u00b7  755 scripts & dirs",
+   "originalText": "600 keys & secrets  \u00b7  644 configs  \u00b7  755 scripts & dirs",
+   "fontSize": 14.5,
    "fontFamily": 3,
    "textAlign": "left",
    "verticalAlign": "top",
    "containerId": null,
    "lineHeight": 1.25,
-   "baseline": 14.0
+   "baseline": 12.69
   },
   {
    "version": 1,
