@@ -4,7 +4,9 @@ A one-page visual for every module — lesson cards plus the key concepts drawn 
 
 Each map comes in two files:
 - **`.png`** — a static preview (shown below, and embedded in each module's README).
-- **`.excalidraw`** — the editable source. Open it at [excalidraw.com](https://excalidraw.com) or with the **Excalidraw** VS Code extension to tweak or export your own version.
+- **`.excalidraw`** — the editable source, with the **same drawing** as the PNG. Open it at [excalidraw.com](https://excalidraw.com) or with the **Excalidraw** VS Code extension to tweak or export your own version.
+
+Both files are generated from one spec by [`generate.py`](generate.py) (`python3 generate.py`, needs `pillow` + `matplotlib`), so the source and the preview always match.
 
 ---
 
