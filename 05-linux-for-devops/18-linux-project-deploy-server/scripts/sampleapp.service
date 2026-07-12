@@ -1,0 +1,11 @@
+[Unit]
+Description=Sample App
+After=network.target
+
+[Service]
+User=deploy
+ExecStart=/usr/bin/python3 /home/deploy/app/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
