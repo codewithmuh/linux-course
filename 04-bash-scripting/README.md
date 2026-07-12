@@ -1,6 +1,10 @@
-# Module 4 — Bash Scripting (3 videos)
+# Module 4 — Bash Scripting (3 lessons)
 
 **Goal:** turn manual command-line work into automation. From variables and loops to real, production-shaped scripts an engineer would actually keep.
+
+![Module 4 — Bash Scripting](../diagrams/module-4-bash-scripting.png)
+
+_Module map — [open the editable Excalidraw version](../diagrams/module-4-bash-scripting.excalidraw)._
 
 | # | Lesson | Covers |
 |---|---|---|
@@ -10,4 +14,4 @@
 
 **Module outcome:** the viewer can write robust Bash scripts with proper error handling and automate repetitive ops tasks.
 
-Reusable scripts built in this module belong in each video's `demo/` folder.
+Reusable scripts built in this module live in each lesson's `scripts/` folder.

@@ -1,6 +1,10 @@
-# Module 1 — Linux Basics (4 videos)
+# Module 1 — Linux Basics (4 lessons)
 
 **Goal:** get a total beginner comfortable at the Linux command line — install it, move around, read and edit files, and process text. This is the foundation every later module builds on.
+
+![Module 1 — Linux Basics](../diagrams/module-1-linux-basics.png)
+
+_Module map — [open the editable Excalidraw version](../diagrams/module-1-linux-basics.excalidraw)._
 
 | # | Lesson | Covers |
 |---|---|---|

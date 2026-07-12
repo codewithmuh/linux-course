@@ -1,6 +1,10 @@
-# Module 3 — Networking (3 videos)
+# Module 3 — Networking (3 lessons)
 
 **Goal:** understand and troubleshoot Linux networking — the skill that separates people who *use* servers from people who can *fix* them when they can't be reached.
+
+![Module 3 — Networking](../diagrams/module-3-networking.png)
+
+_Module map — [open the editable Excalidraw version](../diagrams/module-3-networking.excalidraw)._
 
 | # | Lesson | Covers |
 |---|---|---|

@@ -1,6 +1,10 @@
-# Module 5 — Linux for DevOps (3 videos)
+# Module 5 — Linux for DevOps (3 lessons)
 
 **Goal:** apply everything to the real job. Scheduled tasks, environment management, disk and monitoring — then a hands-on toolkit and a full capstone project.
+
+![Module 5 — Linux for DevOps](../diagrams/module-5-linux-for-devops.png)
+
+_Module map — [open the editable Excalidraw version](../diagrams/module-5-linux-for-devops.excalidraw)._
 
 | # | Lesson | Covers |
 |---|---|---|

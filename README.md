@@ -26,6 +26,7 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 - [Who this is for](#-who-this-is-for)
 - [What you'll learn](#-what-youll-learn)
 - [Course content](#-course-content)
+- [Module maps](#-module-maps)
 - [Getting started](#-getting-started)
 - [How to use this repo](#-how-to-use-this-repo)
 - [Prerequisites](#-prerequisites)
@@ -91,6 +92,14 @@ No prior Linux experience required — we start from the very first `ssh` and bu
 | 18 | 🏁 **Capstone:** Deploy a Production Linux Server | [→](05-linux-for-devops/18-linux-project-deploy-server) |
 
 > The final lesson is a **capstone**: deploy a secured, monitored, application-serving Linux server from scratch.
+
+## 🗺️ Module maps
+
+Each module comes with a one-page visual — lesson cards plus the key concepts drawn out. Browse them all in [`diagrams/`](diagrams/), or preview Module 1 below:
+
+![Module 1 — Linux Basics](diagrams/module-1-linux-basics.png)
+
+> Maps are editable [Excalidraw](https://excalidraw.com) files — open any `.excalidraw` in the browser or the VS Code Excalidraw extension to remix or export your own.
 
 ## 🚀 Getting started
 

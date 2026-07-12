@@ -1,6 +1,10 @@
-# Module 2 — Linux Administration (5 videos)
+# Module 2 — Linux Administration (5 lessons)
 
 **Goal:** manage a real Linux system — users, permissions, processes, services, logs, and packages. This is where the viewer starts to feel like an admin, not just a user.
+
+![Module 2 — Linux Administration](../diagrams/module-2-linux-administration.png)
+
+_Module map — [open the editable Excalidraw version](../diagrams/module-2-linux-administration.excalidraw)._
 
 | # | Lesson | Covers |
 |---|---|---|
