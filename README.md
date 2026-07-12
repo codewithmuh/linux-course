@@ -4,9 +4,9 @@
 
 **The hands-on course that takes you from `whoami` to deploying a production server.**
 
-The companion repository for the **Linux for DevOps** course on YouTube by [@codewithmuh](https://youtube.com/@codewithmuh).
+The companion repository for the **Linux for DevOps** course on YouTube by [@devopsbymuh](https://youtube.com/@codewithmuh).
 
-[![YouTube](https://img.shields.io/badge/YouTube-@codewithmuh-FF0000?logo=youtube&logoColor=white)](https://youtube.com/@codewithmuh)
+[![YouTube](https://img.shields.io/badge/YouTube-@devopsbymuh-FF0000?logo=youtube&logoColor=white)](https://youtube.com/@codewithmuh)
 [![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![Platform: Linux](https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux&logoColor=black)](https://kernel.org)
 ![Level: Beginner → Production](https://img.shields.io/badge/Level-Beginner%20%E2%86%92%20Production-blue)

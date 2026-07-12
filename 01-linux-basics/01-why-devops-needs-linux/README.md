@@ -35,13 +35,13 @@ Common distros you'll meet in DevOps:
 
 ### Why DevOps runs on Linux
 
-Look at one normal day in DevOps. You deploy to a **cloud VM** — it runs Linux. Your app ships as a **Docker container** — every container is a Linux process. Your pipeline runs on a **CI/CD runner** — a Linux box. Your cluster schedules pods onto **Kubernetes nodes** — Linux again. The tools keep changing; the operating system under all of them stays the same.
+Look at one normal day in DevOps. You deploy to a **cloud VM** — it runs Linux. Your app runs in a **Docker container** — every container is a Linux process. Your pipeline runs on a **CI/CD runner** — a Linux box. Your cluster schedules pods onto **Kubernetes nodes** — Linux again. The tools keep changing; the operating system under all of them stays the same.
 
 ```mermaid
 flowchart LR
   subgraph day[One day in DevOps]
     VM[Deploy to a cloud VM]
-    CT[Ship a Docker container]
+    CT[Run your app in Docker]
     CI[Run a CI/CD pipeline]
     K8[Scale on Kubernetes]
   end
