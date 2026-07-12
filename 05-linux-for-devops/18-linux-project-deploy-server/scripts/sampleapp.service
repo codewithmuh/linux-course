@@ -1,10 +1,11 @@
 [Unit]
-Description=Sample App
+Description=Sample app (capstone) - tiny Python web server on 127.0.0.1:8000
 After=network.target
 
 [Service]
 User=deploy
 ExecStart=/usr/bin/python3 /home/deploy/app/main.py
+# Self-heal: if the app dies for any reason, systemd starts it again.
 Restart=always
 
 [Install]

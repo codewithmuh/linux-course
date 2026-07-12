@@ -24,6 +24,7 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 ## 📚 Table of contents
 
 - [Who this is for](#-who-this-is-for)
+- [Why Linux?](#-why-linux)
 - [What you'll learn](#-what-youll-learn)
 - [Course content](#-course-content)
 - [Module maps](#-module-maps)
@@ -35,11 +36,28 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 
 ## 🎯 Who this is for
 
-- **Developers** who keep hitting a wall the moment their code leaves `localhost`.
+- **Developers** whose code works on their laptop but breaks the moment it lands on a server.
 - **Aspiring DevOps / SRE / Cloud engineers** who need Linux as a foundation.
-- **Anyone** comfortable typing commands who wants to actually understand the server they're on.
+- **Anyone** who wants to truly understand the server they are working on.
 
 No prior Linux experience required — we start from the very first `ssh` and build up.
+
+## 🐧 Why Linux?
+
+Because in DevOps, **everything you touch is a Linux box**:
+
+```mermaid
+flowchart LR
+  VM[Cloud VMs<br/>AWS · Azure · GCP] --> L((Linux))
+  CT[Every Docker<br/>container] --> L
+  CI[Every CI/CD<br/>runner] --> L
+  K8[Every Kubernetes<br/>node] --> L
+  L --> YOU[You, over SSH<br/>with a terminal]
+```
+
+More than **9 out of 10 cloud servers run Linux**. It won because it is **free** (no license fee per server), **scriptable** (everything can be automated from the command line), **stable** (servers run for years without a restart), and **the same everywhere** (the commands you learn here work on any cloud).
+
+Docker, Kubernetes, CI/CD, AWS — all of them assume you can already drive Linux. That is why this course comes first. Full story in [Lesson 01](01-linux-basics/01-why-devops-needs-linux).
 
 ## ✨ What you'll learn
 
@@ -119,8 +137,8 @@ bash scripts/server-info.sh
 No Linux machine yet? Any of these works:
 
 - **Windows** → `wsl --install -d Ubuntu`
-- **macOS / Linux** → you're already good to go
-- **Cloud** → spin up a free-tier VM (AWS EC2, DigitalOcean, etc.) and `ssh` in
+- **macOS / Linux** → nothing to install, open your terminal
+- **Cloud** → create a free-tier VM (AWS EC2, DigitalOcean, etc.) and `ssh` in
 
 ## 📖 How to use this repo
 
@@ -131,7 +149,7 @@ No Linux machine yet? Any of these works:
 
 ## ✅ Prerequisites
 
-- A terminal and basic willingness to type commands
+- Any computer with a terminal
 - A Linux environment (WSL, a VM, or a cloud server — see [Getting started](#-getting-started))
 - No prior Linux, sysadmin, or DevOps experience needed
 

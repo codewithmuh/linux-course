@@ -4,7 +4,7 @@
 
 > 📺 **Watch:** _video link coming soon_
 
-This is the capstone. You take a bare Ubuntu server from zero to production-shaped, using every skill in the course. At the end you have a secured, monitored, application-serving Linux server you built end to end — a real project you can put on a resume.
+This is the capstone. You take a bare Ubuntu server from zero to production-ready, using every skill in the course. At the end you have a secured, monitored, application-serving Linux server you built end to end — a real project you can put on a resume.
 
 ## The project
 Six goals, each pulling on a skill from earlier modules:
@@ -35,49 +35,59 @@ flowchart LR
 ```
 
 ## Build it
-Work through the six steps on a fresh cloud VM. The full script is in [`scripts/setup-server.sh`](scripts/setup-server.sh).
+Work through the six steps on a fresh cloud VM, logged in as a user that can `sudo` (on a new VM that is usually `ubuntu`). The full runnable script is [`scripts/setup-server.sh`](scripts/setup-server.sh) — these are the key commands from it:
 
 ```bash
 # 1. create a non-root deploy user with sudo
 sudo useradd -m -s /bin/bash deploy && sudo usermod -aG sudo deploy
 
-# 2. harden SSH: install your key, then disable password + root login
-ssh-copy-id deploy@<ip>
+# 2. give deploy the SSH key you logged in with, then disable password + root login
+#    (SSH refuses keys that other users can read — that is what the chmods are for)
+sudo mkdir -p /home/deploy/.ssh
+sudo cp ~/.ssh/authorized_keys /home/deploy/.ssh/authorized_keys
+sudo chown -R deploy:deploy /home/deploy/.ssh
+sudo chmod 700 /home/deploy/.ssh && sudo chmod 600 /home/deploy/.ssh/authorized_keys
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo systemctl restart ssh
+# ⚠️ keep this session open — test `ssh deploy@<ip>` from a second terminal first
 
-# 3. install and enable Nginx
+# 3. install Nginx and reverse-proxy port 80 to the app on 127.0.0.1:8000
 sudo apt update && sudo apt install -y nginx
 sudo systemctl enable --now nginx
-
-# 4. run the app as a systemd service (see scripts/sampleapp.service)
-sudo tee /etc/systemd/system/sampleapp.service >/dev/null <<'EOF'
-[Unit]
-Description=Sample App
-After=network.target
-[Service]
-User=deploy
-ExecStart=/usr/bin/python3 /home/deploy/app/main.py
-Restart=always
-[Install]
-WantedBy=multi-user.target
+sudo tee /etc/nginx/sites-available/sampleapp >/dev/null <<'EOF'
+server {
+    listen 80 default_server;
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+    }
+}
 EOF
+sudo ln -sf /etc/nginx/sites-available/sampleapp /etc/nginx/sites-enabled/sampleapp
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo nginx -t && sudo systemctl reload nginx
+
+# 4. deploy the app (a tiny Python web server) as a systemd service
+#    setup-server.sh writes /home/deploy/app/main.py for you;
+#    the unit file is scripts/sampleapp.service
+sudo cp sampleapp.service /etc/systemd/system/sampleapp.service
 sudo systemctl daemon-reload && sudo systemctl enable --now sampleapp
 
-# 5. schedule nightly backups via cron
-( crontab -l 2>/dev/null; echo "0 2 * * * /home/deploy/backup.sh" ) | crontab -
+# 5. schedule nightly backups at 02:00 (root's crontab, so /etc is fully readable)
+( sudo crontab -l 2>/dev/null || true; echo "0 2 * * * /home/deploy/backup.sh" ) | sudo crontab -
 
 # 6. monitor
 journalctl -u sampleapp -f
-./ops.sh disk && ./ops.sh ports
+systemctl is-active nginx sampleapp
 ```
 
 ## Prove it
 Confirm the server actually behaves like a production box:
 
-- **Serve traffic.** Open `http://<ip>` in a browser and see the app respond through Nginx.
-- **Self-heal.** Kill the app — `sudo systemctl kill sampleapp` — then run `systemctl status sampleapp` and watch systemd restart it automatically (that's `Restart=always` earning its keep).
+- **Serve traffic.** Open `http://<ip>` in a browser (or `curl http://<ip>`) and see the app respond through Nginx.
+- **Log in as deploy.** From a second terminal: `ssh deploy@<ip>` — do this **before** closing your first session, so a mistake in SSH hardening cannot lock you out.
+- **Self-heal.** Kill the app — `sudo systemctl kill sampleapp` — then run `systemctl status sampleapp` and watch systemd restart it automatically (that is `Restart=always` doing its job).
 - **Back up on demand.** Run `/home/deploy/backup.sh` by hand and confirm a fresh archive lands where you expect, then check the cron entry with `crontab -l`.
 - **Health check.** Run `./ops.sh disk` and `./ops.sh ports`, and tail the app's logs with `journalctl -u sampleapp -f`.
 
@@ -89,7 +99,7 @@ Everything on the checklist should now be true: user ✅ · SSH hardened ✅ · 
 - Confirm SSH now refuses password login (try `ssh -o PubkeyAuthentication=no deploy@<ip>` — it should be rejected).
 
 ## Scripts
-- [`scripts/setup-server.sh`](scripts/setup-server.sh) — best-effort script that runs the six build steps end to end.
+- [`scripts/setup-server.sh`](scripts/setup-server.sh) — runs all six build steps end to end on a fresh Ubuntu server (read it first — it hardens SSH).
 - [`scripts/sampleapp.service`](scripts/sampleapp.service) — the systemd unit that runs the sample app and restarts it on failure.
 
 ---

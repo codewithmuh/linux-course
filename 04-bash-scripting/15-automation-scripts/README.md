@@ -18,7 +18,7 @@ A good ops script follows the same shape every time:
 - **Functions and logging** — small named steps and a consistent log line keep output readable and reusable.
 - **Exit codes** — return non-zero when something is wrong so a scheduler (or another script) can react to it.
 
-Aim for **idempotency and safe defaults**: running a script twice shouldn't cause damage, and sensible defaults mean it does the right thing with no arguments. In the next module these same scripts get wired into **cron** to run unattended.
+Aim for **idempotency and safe defaults**: running a script twice should not cause damage, and good defaults mean it does the right thing with no arguments. In the next module these same scripts get scheduled with **cron** so they run with nobody watching.
 
 ## Commands
 

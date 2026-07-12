@@ -11,7 +11,7 @@
 
 ## Concepts
 
-Unix tools see text as **lines** made of **fields**. Chain small tools into a pipeline and you can answer real questions — like "who are the top 10 IPs hitting my server?" — in one line.
+Unix tools see text as **lines** made of **fields**. Chain small tools into a pipeline and you can answer real questions — like "which 10 IP addresses send my server the most requests?" — in one line.
 
 - **`cut`** — grab specific fields
 - **`sort | uniq -c | sort -rn`** — rank things by frequency
@@ -40,7 +40,7 @@ sed -n '10,20p' file.txt                                          # print a line
 ```
 
 ## In production
-Parse an Nginx access log to find the top 10 client IPs and the most-requested URLs — a one-liner that answers "who's hammering us?" in seconds, with no extra tooling.
+Parse an Nginx access log to find the top 10 client IPs and the most-requested URLs — a one-liner that answers "where is all this traffic coming from?" in seconds, with no extra tools.
 
 ## Practice
 - From a sample access log, produce a ranked table of the top 10 IPs.

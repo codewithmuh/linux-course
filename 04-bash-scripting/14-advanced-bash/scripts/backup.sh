@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# backup.sh — production-shaped Bash: functions, arrays, error handling, trap.
+# backup.sh — production-ready Bash patterns: functions, arrays, error handling, trap.
 # Demonstrates the patterns that make a script safe to run unattended.
 # Usage: ./backup.sh
 set -euo pipefail

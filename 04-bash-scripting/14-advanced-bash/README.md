@@ -56,7 +56,7 @@ echo "exit code: $?"
 ```
 
 ## In production
-`set -euo pipefail` stops a script from blindly marching on after a failed step — the classic bug where a broken variable expands to nothing and the script deletes the wrong directory. `trap` guarantees cleanup runs even when the script errors out, so you never leak temp files or leave a lock behind.
+`set -euo pipefail` stops a script from continuing after a step has already failed — the classic bug where an empty variable makes the script delete the wrong directory. `trap` guarantees cleanup runs even when the script errors out, so you never leave temp files or locks behind.
 
 ## Practice
 - Take the greeting script from the previous lesson and refactor it into functions. Add `set -euo pipefail`, validate the arguments, and return meaningful exit codes.

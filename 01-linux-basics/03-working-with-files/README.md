@@ -41,7 +41,7 @@ echo "deploy done" >> deploy.log      # append to a file
 ```
 
 ## In production
-`tail -f` an application log while you reproduce a bug, then `grep -i error` to jump straight to the failing line. That combination is most of on-call triage.
+`tail -f` an application log while you reproduce a bug, then `grep -i error` to jump straight to the failing line. That combination is how most production problems get found.
 
 ## Practice
 - Given a log file, use `grep` + `wc -l` to count the errors.

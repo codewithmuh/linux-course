@@ -11,7 +11,7 @@
 - Identity + interfaces: `hostname`, `ip addr`
 
 ## Concepts
-An **IP address** identifies a machine on a network, and a **port** identifies a service on that machine. Together they form a **socket** — the exact endpoint traffic connects to. IPs come in two flavours: **private** (reachable only inside your network) and **public** (reachable from the internet).
+An **IP address** identifies a machine on a network, and a **port** identifies a service on that machine. Together they form a **socket** — the exact endpoint traffic connects to. IPs come in two kinds: **private** (reachable only inside your network) and **public** (reachable from the internet).
 
 You rarely type IPs directly — you type names. **DNS** is what turns a name like `google.com` into an IP. Your machine asks a **resolver**, the resolver looks up the name, and hands back the address so the connection can be made.
 

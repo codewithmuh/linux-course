@@ -46,7 +46,7 @@ pkill -f myscript
 ```
 
 ## In production
-When a runaway process pins the CPU, you find it in `top`, confirm it with `ps aux | grep`, and send it SIGTERM. Only if it won't stop do you escalate to SIGKILL. It's a classic on-call move you'll repeat many times.
+When a process goes out of control and eats 100% CPU, you find it in `top`, confirm it with `ps aux | grep`, and send it SIGTERM. Only if it will not stop do you escalate to SIGKILL. You will repeat this exact fix many times in real work.
 
 ## Practice
 - Start a long-running `sleep` in the background, list your jobs, bring it to the foreground, suspend it, resume it in the background, then kill it by PID.

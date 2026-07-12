@@ -33,7 +33,35 @@ Common distros you'll meet in DevOps:
 | **Amazon Linux** | AWS EC2 |
 | **Alpine** | Tiny container base images |
 
-**Why the cloud runs on Linux:** it's free, scriptable, and lightweight — so it's cheaper to run at scale and easy to automate. Every container, CI runner, and cloud VM you'll touch is a Linux box you reach over **SSH**.
+### Why DevOps runs on Linux
+
+Look at one normal day in DevOps. You deploy to a **cloud VM** — it runs Linux. Your app ships as a **Docker container** — every container is a Linux process. Your pipeline runs on a **CI/CD runner** — a Linux box. Your cluster schedules pods onto **Kubernetes nodes** — Linux again. The tools keep changing; the operating system under all of them stays the same.
+
+```mermaid
+flowchart LR
+  subgraph day[One day in DevOps]
+    VM[Deploy to a cloud VM]
+    CT[Ship a Docker container]
+    CI[Run a CI/CD pipeline]
+    K8[Scale on Kubernetes]
+  end
+  VM --> L((All of it<br/>runs Linux))
+  CT --> L
+  CI --> L
+  K8 --> L
+  L -->|you manage it| SSH[SSH + the commands<br/>in this course]
+```
+
+More than **9 out of 10 cloud servers run Linux**. Four simple reasons why it won:
+
+| Reason | What it means for you |
+|---|---|
+| **Free** | No license fee per server — start 1,000 VMs, pay $0 for the OS |
+| **Scriptable** | Everything is a file or a command, so everything can be automated |
+| **Stable** | Servers run for years without a restart |
+| **The same everywhere** | The commands you learn here work on AWS, Azure, GCP, and your laptop |
+
+So this is the deal: every server you will ever touch is a Linux box you reach over **SSH**. Learn Linux once, and you can work on all of them.
 
 ## Commands
 ```bash

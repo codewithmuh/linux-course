@@ -7,7 +7,7 @@
 ## What you'll learn
 - Schedule recurring work with `cron` (and `crontab`)
 - Manage environment variables (session, `~/.bashrc`, `/etc/environment`)
-- Track disk usage: `df`, `du`, mounts, and finding space hogs
+- Track disk usage: `df`, `du`, mounts, and finding what fills the disk
 - Compress and archive with `tar`, `gzip`, and `zip`
 - Build lightweight monitoring habits
 

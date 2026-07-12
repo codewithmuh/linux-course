@@ -1,6 +1,6 @@
 # Module 4 — Bash Scripting (3 lessons)
 
-**Goal:** turn manual command-line work into automation. From variables and loops to real, production-shaped scripts an engineer would actually keep.
+**Goal:** turn manual command-line work into automation. From variables and loops to real, production-ready scripts an engineer would actually keep.
 
 ![Module 4 — Bash Scripting](../diagrams/module-4-bash-scripting.png)
 

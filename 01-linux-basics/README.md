@@ -13,4 +13,4 @@ _Module map — [open the editable Excalidraw version](../diagrams/module-1-linu
 | 03 | [Working with Files](03-working-with-files/README.md) | `cat` `less` `head` `tail`, `nano` `vim`, `grep`, pipes, redirection |
 | 04 | [Text Processing](04-text-processing/README.md) | `sort` `uniq` `cut` `paste` `wc`, `awk`, `sed` |
 
-**Module outcome:** the viewer can navigate a server, manage files, and manipulate text output — the daily bread of ops work.
+**Module outcome:** the viewer can navigate a server, manage files, and manipulate text output — the everyday work of ops.

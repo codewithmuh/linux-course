@@ -11,7 +11,7 @@
 - Manual port testing: `nc` (netcat)
 
 ## Concepts
-"It's not connecting" is never one problem — it's a ladder of them. Work down it in order: is the **host** up? is the **port** open? is **DNS** resolving correctly? is a **firewall** blocking the path? Each rung has a command that answers it, so you stop guessing and start proving.
+"It's not connecting" is never one problem — it's a list of possible problems. Check them in order: is the **host** up? is the **port** open? is **DNS** resolving correctly? is a **firewall** blocking the path? Each question has one command that answers it, so you stop guessing and start proving.
 
 It helps to know the difference between a **listening socket** (a service waiting for connections on a port) and an **established connection** (an active conversation already in progress). `ss` shows you both. When traffic leaves your machine but never arrives, `traceroute` shows you *where* along the path it dies.
 
@@ -33,7 +33,7 @@ nc -zv 10.0.0.5 22        # can I reach SSH on this host?
 ```
 
 ## In production
-An app can't reach its database. You walk the ladder: `nc -zv db-host 5432` (is the port open?), `dig db-host` (is DNS resolving?), and `ss -tulpn` on the DB box (is Postgres actually listening?). That pinpoints the break in under a minute.
+An app can't reach its database. You check in order: `nc -zv db-host 5432` (is the port open?), `dig db-host` (is DNS resolving?), and `ss -tulpn` on the DB box (is Postgres actually listening?). That finds the exact break in under a minute.
 
 ## Practice
 - Use `ss -tulpn` to list every listening service on your box.

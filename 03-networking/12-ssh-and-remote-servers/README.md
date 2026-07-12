@@ -18,8 +18,8 @@ The first time you connect, the server's identity is recorded in your `known_hos
 
 ## Commands
 ```bash
-# generate a key pair
-ssh-keygen -t ed25519 -C "deploy@devopsbymuh"
+# generate a key pair (-C adds a label so you know whose key this is)
+ssh-keygen -t ed25519 -C "you@your-laptop"
 
 # copy the public key to a server
 ssh-copy-id deploy@<server-ip>
