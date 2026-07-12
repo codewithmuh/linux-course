@@ -134,11 +134,15 @@ cat README.md
 bash scripts/server-info.sh
 ```
 
-No Linux machine yet? Any of these works:
+No Linux machine yet? **Start with a free local install — no cloud account needed:**
 
-- **Windows** → `wsl --install -d Ubuntu`
-- **macOS / Linux** → nothing to install, open your terminal
-- **Cloud** → create a free-tier VM (AWS EC2, DigitalOcean, etc.) and `ssh` in
+- **Windows** → `wsl --install -d Ubuntu` — real Ubuntu inside Windows (WSL)
+- **macOS** → `brew install --cask multipass`, then `multipass launch --name devops` and `multipass shell devops` — a real Ubuntu VM in three commands
+- **Linux desktop** → open your terminal, you are ready
+
+**Optional, for later:** a free-tier cloud VM (AWS EC2, DigitalOcean, etc.) gives you a public server on the internet. Nice to have — but every lesson in this course, **including the capstone**, also works on the free local VM.
+
+> ⚠️ The macOS Terminal looks similar, but **macOS is not Linux** — commands like `apt` and `systemctl` do not exist there. For this course, work inside Ubuntu: WSL, Multipass, or a cloud VM.
 
 ## 📖 How to use this repo
 

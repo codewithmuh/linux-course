@@ -35,7 +35,17 @@ flowchart LR
 ```
 
 ## Build it
-Work through the six steps on a fresh cloud VM, logged in as a user that can `sudo` (on a new VM that is usually `ubuntu`). The full runnable script is [`scripts/setup-server.sh`](scripts/setup-server.sh) — these are the key commands from it:
+Work through the six steps on a fresh Ubuntu VM, logged in as a user that can `sudo` (on cloud VMs and Multipass that is usually `ubuntu`). The full runnable script is [`scripts/setup-server.sh`](scripts/setup-server.sh) — these are the key commands from it.
+
+**No cloud account? Use a free local VM** — the whole capstone works on it:
+
+```bash
+multipass launch --name capstone
+# give the VM your SSH key, so `ssh` behaves like on a real server:
+multipass exec capstone -- sh -c 'cat >> .ssh/authorized_keys' < ~/.ssh/id_ed25519.pub
+multipass shell capstone      # you are "on the server" — start step 1
+multipass list                # this is your <ip> for the steps below
+```
 
 ```bash
 # 1. create a non-root deploy user with sudo

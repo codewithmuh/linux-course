@@ -52,6 +52,14 @@ You set up passwordless key-based access to a production box, add a `~/.ssh/conf
 - Add a `~/.ssh/config` host alias.
 - `scp` a file in both directions.
 
+**No cloud server?** Practice against your local Multipass VM. `ssh-copy-id` needs password login (Multipass disables it), so add your key like this instead, then connect to the IP shown by `multipass list`:
+
+```bash
+multipass exec devops -- sh -c 'cat >> .ssh/authorized_keys' < ~/.ssh/id_ed25519.pub
+multipass list                        # note the VM's IP
+ssh ubuntu@<vm-ip>                    # a real SSH login, fully local
+```
+
 ## Cheat sheet
 | Command | What it does |
 |---|---|

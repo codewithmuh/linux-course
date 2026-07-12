@@ -8,7 +8,7 @@
 - What Linux actually is (kernel vs distribution)
 - The major distributions and where each is used
 - Why the cloud runs on Linux
-- Install Ubuntu (or WSL on Windows)
+- Install Ubuntu (WSL on Windows, Multipass on macOS)
 - SSH into a remote server for the first time
 
 ## Concepts
@@ -65,15 +65,21 @@ So this is the deal: every server you will ever touch is a Linux box you reach o
 
 ## Commands
 ```bash
-# Windows only: install Linux via WSL
+# Windows: install real Ubuntu inside Windows (WSL)
 wsl --install -d Ubuntu
+
+# macOS: the Mac Terminal is NOT Linux (no apt, no systemd).
+# Get a real Ubuntu VM with Multipass:
+brew install --cask multipass
+multipass launch --name devops         # create the Ubuntu VM
+multipass shell devops                 # enter it — you are now on Linux
 
 # Confirm you're on Linux
 uname -a                       # kernel + arch
 cat /etc/os-release            # which distro/version
 whoami                         # current user
 
-# SSH into a remote server (e.g. a cheap cloud VM)
+# SSH into a remote server — optional for now, you will do it a lot later
 ssh ubuntu@<server-ip>
 # ...you're now on the server:
 uname -a
@@ -84,9 +90,9 @@ exit                           # back to your machine
 Launch a cloud VM (AWS EC2, DigitalOcean, etc.), then connect with `ssh user@ip`. From that moment, everything you do — installing software, deploying apps, reading logs — happens over this connection. Getting comfortable here is step zero of DevOps.
 
 ## Practice
-- Install Ubuntu/WSL and run `uname -a`, `whoami`, and `cat /etc/os-release`.
-- Spin up a free-tier cloud VM and SSH into it.
-- Run [`scripts/server-info.sh`](scripts/server-info.sh) on the server and read the output.
+- Install Ubuntu (WSL on Windows, Multipass on macOS) and run `uname -a`, `whoami`, and `cat /etc/os-release`.
+- Run [`scripts/server-info.sh`](scripts/server-info.sh) inside your Ubuntu and read the output.
+- Optional (needs a cloud account): create a free-tier cloud VM and SSH into it.
 
 ## Cheat sheet
 | Command | What it does |
@@ -96,6 +102,8 @@ Launch a cloud VM (AWS EC2, DigitalOcean, etc.), then connect with `ssh user@ip`
 | `whoami` | Current user |
 | `ssh user@host` | Connect to a remote server |
 | `wsl --install -d Ubuntu` | Install Linux on Windows |
+| `multipass launch --name devops` | Create an Ubuntu VM on macOS |
+| `multipass shell devops` | Enter that Ubuntu VM |
 
 ## Scripts
 - [`scripts/server-info.sh`](scripts/server-info.sh) — one-glance snapshot of any Linux box (host, kernel, distro, user, uptime).

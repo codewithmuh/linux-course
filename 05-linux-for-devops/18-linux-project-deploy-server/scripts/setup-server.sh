@@ -3,9 +3,9 @@ set -euo pipefail
 
 # setup-server.sh — take a fresh Ubuntu server from zero to production-ready.
 #
-# Run this ON the server, logged in as a user that can sudo (on a new cloud
-# VM that is usually `ubuntu`). Read it before you run it: it hardens SSH
-# and installs services.
+# Run this ON the server, logged in as a user that can sudo — on a fresh
+# cloud VM or a local Multipass VM that user is usually `ubuntu`. Read it
+# before you run it: it hardens SSH and installs services.
 #
 # usage:  bash setup-server.sh
 #
