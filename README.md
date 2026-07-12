@@ -136,7 +136,7 @@ bash scripts/server-info.sh
 
 No Linux machine yet? **Start with a free local install — no cloud account needed:**
 
-- **Windows** → `wsl --install -d Ubuntu` — real Ubuntu inside Windows (WSL)
+- **Windows** → open **PowerShell as Administrator**, run `wsl --install -d Ubuntu`, restart — this one command installs WSL **and** Ubuntu together
 - **macOS** → `brew install --cask multipass`, then `multipass launch --name devops` and `multipass shell devops` — a real Ubuntu VM in three commands
 - **Linux desktop** → open your terminal, you are ready
 

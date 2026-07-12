@@ -65,8 +65,15 @@ So this is the deal: every server you will ever touch is a Linux box you reach o
 
 ## Commands
 ```bash
-# Windows: install real Ubuntu inside Windows (WSL)
+# Windows: ONE command installs both WSL and Ubuntu.
+# Step 1 — open PowerShell as Administrator (Start → type "PowerShell" →
+#          right-click → "Run as administrator"), then run:
 wsl --install -d Ubuntu
+# Step 2 — restart your computer when it finishes.
+# Step 3 — Ubuntu opens by itself: create your Linux username + password
+#          (separate from your Windows login).
+# Later: open Ubuntu from the Start menu, or just type `wsl` in any terminal.
+# If Windows says "wsl is not recognized": install Windows updates, try again.
 
 # macOS: the Mac Terminal is NOT Linux (no apt, no systemd).
 # Get a real Ubuntu VM with Multipass:
@@ -101,7 +108,8 @@ Launch a cloud VM (AWS EC2, DigitalOcean, etc.), then connect with `ssh user@ip`
 | `cat /etc/os-release` | Which distro / version |
 | `whoami` | Current user |
 | `ssh user@host` | Connect to a remote server |
-| `wsl --install -d Ubuntu` | Install Linux on Windows |
+| `wsl --install -d Ubuntu` | Install WSL + Ubuntu (admin PowerShell, then restart) |
+| `wsl` | Re-enter Ubuntu from any Windows terminal |
 | `multipass launch --name devops` | Create an Ubuntu VM on macOS |
 | `multipass shell devops` | Enter that Ubuntu VM |
 

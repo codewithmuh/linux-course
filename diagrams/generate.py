@@ -243,7 +243,7 @@ def module1():
          ("cat /etc/os-release", "which distribution"),
          ("whoami", "who am I logged in as"),
          ("ssh user@server-ip", "connect to a remote server"),
-         ("wsl --install -d Ubuntu", "(Windows) install Linux"),
+         ("wsl --install -d Ubuntu", "(Windows) WSL + Ubuntu in one"),
          ("multipass launch · shell", "(macOS) local Ubuntu VM")],
         "Every cloud VM, container and CI runner is a Linux machine you reach over SSH.")
 
