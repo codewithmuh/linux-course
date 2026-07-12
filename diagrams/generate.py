@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """Generate the 5 course module maps as MATCHING .excalidraw + .png files.
 
-Tall vertical infographics (readable when shared on YouTube / phones):
-big type, one section per row, concept panels between lesson cards.
+Tall vertical infographics: big type, one section per row, concept panels
+between lesson cards. Every map is generated in TWO versions:
+
+  diagrams/               compact spacing — embedded in the READMEs (GitHub)
+  diagrams/presentation/  huge spacing — one container per screen, for
+                          zooming + scrolling section by section on video
 
 One display list per module -> rendered to PNG (Pillow) and to excalidraw
 JSON, so the editable source and the preview can never drift apart.
 
 Usage:   python3 generate.py          (needs: pillow, matplotlib)
-Output:  module-*.png + module-*.excalidraw written next to this script.
 """
 import json
 import os
@@ -25,9 +28,9 @@ BG = "#fbfcfe"
 W = 1620          # canvas width for every module map
 M = 30            # outer margin
 CW = W - 2 * M    # full content width
-GAP = 460         # vertical gap between sections — big enough that at full-width
-                  # zoom on a 16:9 screen exactly ONE container is visible, never
-                  # a piece of the previous or next one (even the small banners)
+GAP = 34          # vertical gap between sections; build_all() sets this per version
+GAP_COMPACT = 34         # tight — reads well on GitHub, no wasted scroll
+GAP_PRESENTATION = 460   # one container per 16:9 screen, nothing else in frame
 
 TINT = {
     "#1971c2": "#e7f5ff", "#2f9e44": "#ebfbee", "#7048e8": "#f3f0ff",
@@ -829,9 +832,17 @@ def render_excalidraw(sc, path):
         json.dump(doc, f, indent=1)
 
 
-if __name__ == "__main__":
+def build_all(gap, out_dir, label):
+    global GAP
+    GAP = gap
+    os.makedirs(out_dir, exist_ok=True)
     for build in (module1, module2, module3, module4, module5):
         sc, name = build()
-        render_png(sc, os.path.join(OUT, f"{name}.png"))
-        render_excalidraw(sc, os.path.join(OUT, f"{name}.excalidraw"))
-        print(f"{name}: {sc.w}x{int(sc.h)}, {len(sc.items)} items")
+        render_png(sc, os.path.join(out_dir, f"{name}.png"))
+        render_excalidraw(sc, os.path.join(out_dir, f"{name}.excalidraw"))
+        print(f"{label}  {name}: {sc.w}x{int(sc.h)}")
+
+
+if __name__ == "__main__":
+    build_all(GAP_COMPACT, OUT, "github      ")
+    build_all(GAP_PRESENTATION, os.path.join(OUT, "presentation"), "presentation")

@@ -6,7 +6,11 @@ Each map comes in two files:
 - **`.png`** — a static preview (shown below, and embedded in each module's README).
 - **`.excalidraw`** — the editable source, with the **same drawing** as the PNG. Open it at [excalidraw.com](https://excalidraw.com) or with the **Excalidraw** VS Code extension to tweak or export your own version.
 
-Both files are generated from one spec by [`generate.py`](generate.py) (`python3 generate.py`, needs `pillow` + `matplotlib`), so the source and the preview always match.
+And in two versions:
+- **This folder** — compact spacing, made for reading here on GitHub.
+- **[`presentation/`](presentation/)** — the same maps with big space between sections, made for videos: zoom in until one container fills the screen, then scroll to the next one like a slide.
+
+Everything is generated from one spec by [`generate.py`](generate.py) (`python3 generate.py`, needs `pillow` + `matplotlib`), so the sources and previews always match.
 
 ---
 
