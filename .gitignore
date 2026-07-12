@@ -1,0 +1,26 @@
+# Secrets / env
+.env
+*.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Video/render artifacts (keep the repo about plans + code, not media)
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+renders/
+exports/
+
+# Temp
+*.log
+tmp/
