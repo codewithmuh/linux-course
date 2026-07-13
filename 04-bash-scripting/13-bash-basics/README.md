@@ -37,16 +37,16 @@ done
 count=0
 while [[ $count -lt 3 ]]; do     # loop while a condition holds
   echo "while $count"
-  count=$((count + 1))
+  count=$((count + 1))           # $(( )) = do math: add 1
 done
 ```
 
 Make it executable and run it:
 
 ```bash
-chmod +x hello.sh
-./hello.sh            # prompts for your name
-./hello.sh Rashid     # takes the name as an argument
+chmod +x hello.sh     # chmod +x = make the file executable
+./hello.sh            # run it — prompts for your name
+./hello.sh Rashid     # run it with the name as an argument
 ```
 
 ## What the names mean

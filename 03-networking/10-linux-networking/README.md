@@ -26,8 +26,8 @@ flowchart LR
 
 ## Commands
 ```bash
-hostname
-hostname -I
+hostname           # this machine's name
+hostname -I        # this machine's IP address(es)
 
 ip addr            # interfaces + IPs (modern)
 ip route           # default gateway
@@ -35,11 +35,11 @@ ip route           # default gateway
 # DNS = "Domain Name System" + reachability
 ping -c 4 google.com                 # named after the sonar "ping" — send, wait for echo
 curl -I https://example.com          # curl = "client for URLs" (-I: headers only)
-curl https://api.github.com/zen
+curl https://api.github.com/zen      # fetch a tiny API answer, right in the terminal
 wget https://example.com/file.txt    # wget = "web get" — download a file
 
-cat /etc/hosts
-cat /etc/resolv.conf                 # which DNS servers
+cat /etc/hosts                       # local name → IP overrides (checked before DNS)
+cat /etc/resolv.conf                 # which DNS servers this machine asks
 ```
 
 ## What the names mean

@@ -32,19 +32,19 @@ whoami                 # literally "who am I" — my username
 groups                 # which groups I belong to
 
 # create a user + set password   (useradd = "user add", passwd = "password")
-sudo useradd -m -s /bin/bash deploy    # -m: make a home folder
-sudo passwd deploy
+sudo useradd -m -s /bin/bash deploy    # create user deploy (-m = make home folder, -s = login shell)
+sudo passwd deploy                     # set deploy's password (asks twice)
 
 # grant sudo   (usermod = "user modify", -aG = "append to Groups")
-sudo usermod -aG sudo deploy
+sudo usermod -aG sudo deploy           # add deploy to the sudo group → deploy may use sudo now
 
 # inspect
-id deploy
-grep deploy /etc/passwd
-getent group sudo      # getent = "get entries" from system databases
+id deploy                              # deploy's uid, gid and groups
+grep deploy /etc/passwd                # deploy's line in the user database
+getent group sudo                      # getent = "get entries": who is in the sudo group
 
 # run one command as another user   (sudo = "superuser do")
-sudo -u deploy whoami
+sudo -u deploy whoami                  # run whoami as deploy → prints: deploy
 ```
 
 ## What the names mean

@@ -26,17 +26,17 @@ There are two big families you'll meet constantly:
 ## Commands
 ```bash
 # Debian / Ubuntu   (apt = "Advanced Package Tool")
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y htop tree jq
-apt search nginx
-apt show nginx
-dpkg -l | grep nginx             # dpkg = "Debian package"
-sudo apt remove --purge htop
+sudo apt update                  # refresh the package catalog (always first)
+sudo apt upgrade -y              # install newer versions (-y = yes to all questions)
+sudo apt install -y htop tree jq # install three tools at once
+apt search nginx                 # find packages by name
+apt show nginx                   # details before you install
+dpkg -l | grep nginx             # dpkg = "Debian package" — list what's installed
+sudo apt remove --purge htop     # remove it + delete its config
 
 # Red Hat / Fedora / Amazon Linux   (dnf = "Dandified YUM", yum = "Yellowdog Updater, Modified")
-sudo dnf update -y
-sudo dnf install -y htop
+sudo dnf update -y               # refresh + upgrade in one step
+sudo dnf install -y htop         # install
 sudo yum install -y git          # older systems
 rpm -qa | grep git               # rpm = "Red Hat Package Manager"
 ```

@@ -31,17 +31,17 @@ Three **special bits** sit on top: **SUID** lets a program run as its owner (tha
 ```bash
 ls -l script.sh                  # see the permission string
 chmod +x script.sh               # chmod = "change mode" — make it executable
-chmod 644 config.yaml
-chmod 600 ~/.ssh/id_rsa          # private key must be locked down
-chmod -R 755 /var/www/html
+chmod 644 config.yaml            # 644 = rw- r-- r-- → I write, everyone else reads
+chmod 600 ~/.ssh/id_rsa          # 600 = rw- --- --- → only me: for keys + secrets
+chmod -R 755 /var/www/html       # 755 = rwx r-x r-x → -R = also everything inside
 
-sudo chown deploy:deploy app.log # chown = "change owner"
-sudo chgrp webadmins /var/www    # chgrp = "change group"
+sudo chown deploy:deploy app.log # chown = "change owner": app.log now belongs to user deploy, group deploy
+sudo chgrp webadmins /var/www    # chgrp = "change group": /var/www now belongs to the webadmins group
 
 # special bits
-ls -l /usr/bin/passwd            # note the SUID 's'  (SUID = "Set User ID")
-chmod g+s shared/                # SGID = "Set Group ID": new files inherit the group
-ls -ld /tmp                      # sticky bit 't'
+ls -l /usr/bin/passwd            # the 's' = SUID ("Set User ID"): always runs as its owner (root)
+chmod g+s shared/                # SGID ("Set Group ID"): new files in shared/ inherit its group
+ls -ld /tmp                      # the 't' = sticky bit: all can add files, only owners delete their own
 ```
 
 ## What the names mean

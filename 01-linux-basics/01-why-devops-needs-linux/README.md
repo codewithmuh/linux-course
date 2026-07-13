@@ -68,7 +68,7 @@ So this is the deal: every server you will ever touch is a Linux box you reach o
 # Windows: ONE command installs both WSL and Ubuntu.
 # Step 1 — open PowerShell as Administrator (Start → type "PowerShell" →
 #          right-click → "Run as administrator"), then run:
-wsl --install -d Ubuntu
+wsl --install -d Ubuntu        # installs WSL + Ubuntu together
 # Step 2 — restart your computer when it finishes.
 # Step 3 — Ubuntu opens by itself: create your Linux username + password
 #          (separate from your Windows login).
@@ -77,8 +77,8 @@ wsl --install -d Ubuntu
 
 # macOS: the Mac Terminal is NOT Linux (no apt, no systemd).
 # Get a real Ubuntu VM with Multipass:
-brew install --cask multipass
-multipass launch --name devops         # create the Ubuntu VM
+brew install --cask multipass          # brew = the Mac package manager
+multipass launch --name devops         # create an Ubuntu VM named "devops"
 multipass shell devops                 # enter it — you are now on Linux
 
 # Confirm you're on Linux
@@ -87,10 +87,10 @@ cat /etc/os-release            # cat = "concatenate": print the file — which d
 whoami                         # literally "who am I" — current user
 
 # SSH = "Secure Shell" — log in to a remote server (optional for now)
-ssh ubuntu@<server-ip>
+ssh ubuntu@<server-ip>         # log in as user "ubuntu" on that machine
 # ...you're now on the server:
-uname -a
-exit                           # back to your machine
+uname -a                       # proof: this is the server's Linux, not yours
+exit                           # close the connection — back to your machine
 ```
 
 ## What the names mean

@@ -24,8 +24,8 @@ flowchart LR
 ```bash
 cat /etc/os-release           # cat = "concatenate" — print a file
 less /var/log/syslog          # a pager ("less is more"); q to quit, / to search
-head -n 20 /var/log/syslog    # head/tail = first / last lines
-tail -n 20 /var/log/syslog
+head -n 20 /var/log/syslog    # head = the first 20 lines
+tail -n 20 /var/log/syslog    # tail = the last 20 lines
 tail -f /var/log/syslog       # -f = "follow" live (Ctrl-C to stop)
 
 # edit
@@ -33,9 +33,9 @@ nano notes.txt                # beginner-friendly
 # vim survival: press i to insert, Esc to stop, :wq to save+quit
 
 # search + pipes + redirection   (grep = "global regular expression print")
-grep -i "error" /var/log/syslog       # -i: ignore upper/lower case
-grep -rn "listen" /etc/nginx/         # recursive, with line numbers
-cat /etc/passwd | grep bash | wc -l   # wc = "word count" (-l: count lines)
+grep -i "error" /var/log/syslog       # find "error" in the log (-i = any upper/lower case)
+grep -rn "listen" /etc/nginx/         # search a whole folder (-r), show line numbers (-n)
+cat /etc/passwd | grep bash | wc -l   # count users that use bash (wc -l = count lines)
 ls -l /etc > etc-listing.txt          # overwrite a file
 echo "deploy done" >> deploy.log      # append to a file
 ```

@@ -27,23 +27,23 @@ For logs, systemd records everything in a central journal you read with `journal
 
 ## Commands
 ```bash
-systemctl status nginx             # systemctl = "system control"
-sudo systemctl start nginx
-sudo systemctl enable nginx        # start on boot
-sudo systemctl restart nginx
-systemctl is-active nginx
-systemctl list-units --type=service
+systemctl status nginx             # systemctl = "system control" — running? + last logs
+sudo systemctl start nginx         # start it right now
+sudo systemctl enable nginx        # start on every boot
+sudo systemctl restart nginx       # stop + start (after a deploy)
+systemctl is-active nginx          # prints just: active / inactive
+systemctl list-units --type=service   # every service on this machine
 
 # logs   (journalctl = "journal control" — read systemd's log book)
-journalctl -u nginx --no-pager | tail
-journalctl -u nginx -f             # follow live
-journalctl --since "10 min ago"
-tail -f /var/log/nginx/error.log
+journalctl -u nginx --no-pager | tail   # -u = only this unit's logs
+journalctl -u nginx -f             # -f = follow live
+journalctl --since "10 min ago"    # logs by time window
+tail -f /var/log/nginx/error.log   # classic plain log file, followed live
 
 # write a tiny custom service
-sudo nano /etc/systemd/system/hello.service
-sudo systemctl daemon-reload
-sudo systemctl enable --now hello.service
+sudo nano /etc/systemd/system/hello.service   # write the unit file
+sudo systemctl daemon-reload                  # tell systemd to re-read unit files
+sudo systemctl enable --now hello.service     # start now + on every boot
 ```
 
 ## What the names mean

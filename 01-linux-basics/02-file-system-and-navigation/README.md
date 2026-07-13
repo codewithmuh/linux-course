@@ -38,11 +38,11 @@ cd -                     # jump back to previous dir
 
 mkdir -p projects/app/logs        # mkdir = "make directory" (-p: parents too)
 touch projects/app/README.md      # create an empty file (or update its date)
-cp projects/app/README.md /tmp/   # cp = "copy"
-mv /tmp/README.md /tmp/notes.md   # mv = "move" — also how you rename
-rm /tmp/notes.md                  # rm = "remove"
+cp projects/app/README.md /tmp/   # cp = "copy": copy the file into /tmp
+mv /tmp/README.md /tmp/notes.md   # mv = "move": here it renames the file
+rm /tmp/notes.md                  # rm = "remove": delete it (no trash bin!)
 
-find / -name "*.log" -type f 2>/dev/null | head
+find / -name "*.log" -type f 2>/dev/null | head   # search the whole disk for .log files
 find . -type d                    # only directories
 find . -mtime -1                  # changed in the last day
 ```

@@ -37,11 +37,11 @@ case "$1" in
 esac
 
 # run each subcommand
-./ops.sh cpu
-./ops.sh disk
-./ops.sh logs nginx
-./ops.sh ports
-./ops.sh restart nginx
+./ops.sh cpu            # read-only: safe to run anytime
+./ops.sh disk           # read-only: safe to run anytime
+./ops.sh logs nginx     # read-only: safe to run anytime
+./ops.sh ports          # read-only: safe to run anytime
+./ops.sh restart nginx  # changes the system — the only one that does
 ```
 
 The full, hardened version of this script lives in [`scripts/ops.sh`](scripts/ops.sh).

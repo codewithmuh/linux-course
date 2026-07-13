@@ -19,14 +19,16 @@ The first time you connect, the server's identity is recorded in your `known_hos
 ## Commands
 ```bash
 # generate a key pair   (ssh-keygen = "SSH key generator"; -C adds a label)
-ssh-keygen -t ed25519 -C "you@your-laptop"
+ssh-keygen -t ed25519 -C "you@your-laptop"   # creates id_ed25519 (private) + id_ed25519.pub (public)
 
 # copy the public key to a server
-ssh-copy-id deploy@<server-ip>
+ssh-copy-id deploy@<server-ip>   # adds your public key to the server's authorized_keys
 # now log in with no password
-ssh deploy@<server-ip>
+ssh deploy@<server-ip>           # the server checks your private key — no password asked
 
 # ~/.ssh/config shortcut
+# Host = the short name you type · HostName = the real IP
+# User = who to log in as     · IdentityFile = which private key to use
 cat >> ~/.ssh/config <<'EOF'
 Host prod
   HostName 203.0.113.10
@@ -36,9 +38,9 @@ EOF
 ssh prod            # that's it
 
 # transfer files   (scp = "secure copy", sftp = "SSH File Transfer Protocol")
-scp ./app.tar.gz prod:/tmp/
-scp prod:/var/log/nginx/error.log ./
-sftp prod           # interactive: put / get
+scp ./app.tar.gz prod:/tmp/            # upload: my machine → server's /tmp
+scp prod:/var/log/nginx/error.log ./   # download: server → my current folder
+sftp prod           # interactive session: put = upload, get = download
 
 # hardening (server side): disable password + root login in /etc/ssh/sshd_config
 ```

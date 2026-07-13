@@ -40,7 +40,7 @@ Work through the six steps on a fresh Ubuntu VM, logged in as a user that can `s
 **No cloud account? Use a free local VM** — the whole capstone works on it:
 
 ```bash
-multipass launch --name capstone
+multipass launch --name capstone      # create a fresh local Ubuntu VM
 # give the VM your SSH key, so `ssh` behaves like on a real server:
 multipass exec capstone -- sh -c 'cat >> .ssh/authorized_keys' < ~/.ssh/id_ed25519.pub
 multipass shell capstone      # you are "on the server" — start step 1
@@ -49,47 +49,47 @@ multipass list                # this is your <ip> for the steps below
 
 ```bash
 # 1. create a non-root deploy user with sudo
-sudo useradd -m -s /bin/bash deploy && sudo usermod -aG sudo deploy
+sudo useradd -m -s /bin/bash deploy && sudo usermod -aG sudo deploy   # create deploy + allow sudo
 
 # 2. give deploy the SSH key you logged in with, then disable password + root login
 #    (SSH refuses keys that other users can read — that is what the chmods are for)
-sudo mkdir -p /home/deploy/.ssh
-sudo cp ~/.ssh/authorized_keys /home/deploy/.ssh/authorized_keys
-sudo chown -R deploy:deploy /home/deploy/.ssh
-sudo chmod 700 /home/deploy/.ssh && sudo chmod 600 /home/deploy/.ssh/authorized_keys
-sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
-sudo systemctl restart ssh
+sudo mkdir -p /home/deploy/.ssh                       # deploy's key folder
+sudo cp ~/.ssh/authorized_keys /home/deploy/.ssh/authorized_keys   # give deploy your key
+sudo chown -R deploy:deploy /home/deploy/.ssh         # deploy owns it
+sudo chmod 700 /home/deploy/.ssh && sudo chmod 600 /home/deploy/.ssh/authorized_keys  # strict, or SSH refuses
+sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config  # no passwords
+sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config                # no root login
+sudo systemctl restart ssh                            # apply the SSH changes
 # ⚠️ keep this session open — test `ssh deploy@<ip>` from a second terminal first
 
 # 3. install Nginx and reverse-proxy port 80 to the app on 127.0.0.1:8000
-sudo apt update && sudo apt install -y nginx
-sudo systemctl enable --now nginx
+sudo apt update && sudo apt install -y nginx          # install the web server
+sudo systemctl enable --now nginx                     # start now + on every boot
 sudo tee /etc/nginx/sites-available/sampleapp >/dev/null <<'EOF'
 server {
-    listen 80 default_server;
+    listen 80 default_server;              # answer on port 80
     location / {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:8000;  # hand every request to the app
+        proxy_set_header Host $host;       # keep the original host name
     }
 }
 EOF
-sudo ln -sf /etc/nginx/sites-available/sampleapp /etc/nginx/sites-enabled/sampleapp
-sudo rm -f /etc/nginx/sites-enabled/default
-sudo nginx -t && sudo systemctl reload nginx
+sudo ln -sf /etc/nginx/sites-available/sampleapp /etc/nginx/sites-enabled/sampleapp  # switch the site on
+sudo rm -f /etc/nginx/sites-enabled/default           # remove the default welcome page
+sudo nginx -t && sudo systemctl reload nginx          # -t = test the config first, then reload
 
 # 4. deploy the app (a tiny Python web server) as a systemd service
 #    setup-server.sh writes /home/deploy/app/main.py for you;
 #    the unit file is scripts/sampleapp.service
-sudo cp sampleapp.service /etc/systemd/system/sampleapp.service
-sudo systemctl daemon-reload && sudo systemctl enable --now sampleapp
+sudo cp sampleapp.service /etc/systemd/system/sampleapp.service   # install the unit file
+sudo systemctl daemon-reload && sudo systemctl enable --now sampleapp  # register + start the app
 
 # 5. schedule nightly backups at 02:00 (root's crontab, so /etc is fully readable)
-( sudo crontab -l 2>/dev/null || true; echo "0 2 * * * /home/deploy/backup.sh" ) | sudo crontab -
+( sudo crontab -l 2>/dev/null || true; echo "0 2 * * * /home/deploy/backup.sh" ) | sudo crontab -   # keep old entries + add ours
 
 # 6. monitor
-journalctl -u sampleapp -f
-systemctl is-active nginx sampleapp
+journalctl -u sampleapp -f            # follow the app's logs live
+systemctl is-active nginx sampleapp   # both must print: active
 ```
 
 ## Prove it

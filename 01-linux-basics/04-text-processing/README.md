@@ -21,21 +21,21 @@ Unix tools see text as **lines** made of **fields**. Chain small tools into a pi
 ## Commands
 ```bash
 # counting + ranking   (uniq = "unique", wc = "word count")
-cut -d: -f1 /etc/passwd | sort | uniq | wc -l
-sort access.log | uniq -c | sort -rn | head
+cut -d: -f1 /etc/passwd | sort | uniq | wc -l   # how many different users?
+sort access.log | uniq -c | sort -rn | head     # rank lines by how often they appear
 
 # cut / paste
-cut -d, -f1,3 data.csv
-paste names.txt scores.txt
+cut -d, -f1,3 data.csv           # take columns 1 + 3 (-d, = split on commas)
+paste names.txt scores.txt       # join two files side by side
 
 # awk: fields, filters, sums   (named after its creators: Aho, Weinberger, Kernighan)
-awk -F: '{print $1}' /etc/passwd
+awk -F: '{print $1}' /etc/passwd                # print field 1 (-F: = split on colons)
 awk '{print $1}' access.log | sort | uniq -c | sort -rn | head   # top IPs
 awk -F: '$3 >= 1000 {print $1}' /etc/passwd                       # real users
 
 # sed = "stream editor": substitution + in-place edit
-sed 's/error/ERROR/g' app.log
-sed -i 's/localhost/127.0.0.1/g' config.ini
+sed 's/error/ERROR/g' app.log                   # replace error → ERROR (g = every match)
+sed -i 's/localhost/127.0.0.1/g' config.ini     # -i = change the file itself
 sed -n '10,20p' file.txt                                          # print a line range
 ```
 

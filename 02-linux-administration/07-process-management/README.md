@@ -28,16 +28,16 @@ Always try SIGTERM first; reach for `kill -9` only when a process refuses to sto
 ## Commands
 ```bash
 ps aux | head       # ps = "process status" — list running processes
-ps aux | grep nginx
-top                 # top = "table of processes"; q to quit
+ps aux | grep nginx # find nginx among all processes
+top                 # top = "table of processes" — live view; q to quit
 htop                # Hisham's top — nicer; install: sudo apt install htop
 
 # background / foreground   (bg / fg = "background" / "foreground")
 sleep 300 &         # & = run it in the background
-jobs
-fg %1
+jobs                # list this shell's background jobs
+fg %1               # bring job 1 back to the front
 # Ctrl-Z to suspend, then:
-bg %1
+bg %1               # let job 1 continue in the background
 
 # kill by PID ("process ID") and by name
 kill <pid>          # SIGTERM = "signal: terminate" — polite

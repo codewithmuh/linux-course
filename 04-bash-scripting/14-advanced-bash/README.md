@@ -50,9 +50,9 @@ done
 Run it and inspect the exit code:
 
 ```bash
-chmod +x backup.sh
-./backup.sh
-echo "exit code: $?"
+chmod +x backup.sh      # make it executable
+./backup.sh             # run it
+echo "exit code: $?"    # $? = the last command's exit code (0 = success)
 ```
 
 ## In production

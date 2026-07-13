@@ -26,22 +26,22 @@ Each snippet below is the core idea; the full, hardened versions live in [`scrip
 
 ```bash
 # backup.sh — timestamped tarball, then keep only the last 7
-ts=$(date +%F_%H%M)
-tar -czf "/backups/etc_$ts.tar.gz" /etc
-ls -1t /backups/etc_*.tar.gz | tail -n +8 | xargs -r rm --
+ts=$(date +%F_%H%M)                              # timestamp like 2026-07-13_0230
+tar -czf "/backups/etc_$ts.tar.gz" /etc          # archive /etc into one dated file
+ls -1t /backups/etc_*.tar.gz | tail -n +8 | xargs -r rm --   # newest first, delete from #8 on
 
 # healthcheck.sh — compare against thresholds
-disk=$(df / | awk 'END{print $5}' | tr -d '%')
-mem=$(free | awk '/Mem:/{printf "%.0f", $3/$2*100}')
-[[ $disk -gt 80 ]] && echo "WARN disk ${disk}%"
-[[ $mem  -gt 90 ]] && echo "WARN mem ${mem}%"
+disk=$(df / | awk 'END{print $5}' | tr -d '%')   # % used on the root disk (number only)
+mem=$(free | awk '/Mem:/{printf "%.0f", $3/$2*100}')   # memory used, as a %
+[[ $disk -gt 80 ]] && echo "WARN disk ${disk}%"  # warn above 80%
+[[ $mem  -gt 90 ]] && echo "WARN mem ${mem}%"    # warn above 90%
 
 # logclean.sh — compress logs older than 7 days, delete older than 30
-find /var/log/myapp -name "*.log" -mtime +7  -exec gzip {} \;
-find /var/log/myapp -name "*.gz"  -mtime +30 -delete
+find /var/log/myapp -name "*.log" -mtime +7  -exec gzip {} \;   # -mtime +7 = older than 7 days
+find /var/log/myapp -name "*.gz"  -mtime +30 -delete            # remove ancient archives
 
 # monitor.sh — one-line snapshot, ideal for cron
-echo "$(date +%F_%T) load=$(uptime | awk -F'load average:' '{print $2}')"
+echo "$(date +%F_%T) load=$(uptime | awk -F'load average:' '{print $2}')"   # date + CPU load
 ```
 
 ## In production

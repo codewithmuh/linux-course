@@ -22,12 +22,12 @@ ss -tulpn                 # ss = "socket statistics" (t=tcp u=udp l=listen p=pro
 sudo netstat -tulpn       # netstat = "network statistics" — the classic version
 
 # DNS   (dig = "domain information groper", nslookup = "name server lookup")
-dig example.com +short
-dig example.com A
-nslookup example.com
+dig example.com +short    # +short = just the answer (the IP), nothing else
+dig example.com A         # A record = name → IPv4 address
+nslookup example.com      # same question, the older tool
 
 # path + port reachability
-traceroute example.com
+traceroute example.com    # show every network hop between you and the target
 nc -zv example.com 443    # nc = "netcat" — is the port open?
 nc -zv 10.0.0.5 22        # can I reach SSH on this host?
 ```
