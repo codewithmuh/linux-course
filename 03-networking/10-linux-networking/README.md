@@ -32,11 +32,11 @@ hostname -I
 ip addr            # interfaces + IPs (modern)
 ip route           # default gateway
 
-# DNS + reachability
-ping -c 4 google.com
-curl -I https://example.com          # headers only
+# DNS = "Domain Name System" + reachability
+ping -c 4 google.com                 # named after the sonar "ping" — send, wait for echo
+curl -I https://example.com          # curl = "client for URLs" (-I: headers only)
 curl https://api.github.com/zen
-wget https://example.com/file.txt
+wget https://example.com/file.txt    # wget = "web get" — download a file
 
 cat /etc/hosts
 cat /etc/resolv.conf                 # which DNS servers

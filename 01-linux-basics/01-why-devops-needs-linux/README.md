@@ -82,11 +82,11 @@ multipass launch --name devops         # create the Ubuntu VM
 multipass shell devops                 # enter it — you are now on Linux
 
 # Confirm you're on Linux
-uname -a                       # kernel + arch
-cat /etc/os-release            # which distro/version
-whoami                         # current user
+uname -a                       # uname = "Unix name": kernel + architecture
+cat /etc/os-release            # cat = "concatenate": print the file — which distro
+whoami                         # literally "who am I" — current user
 
-# SSH into a remote server — optional for now, you will do it a lot later
+# SSH = "Secure Shell" — log in to a remote server (optional for now)
 ssh ubuntu@<server-ip>
 # ...you're now on the server:
 uname -a

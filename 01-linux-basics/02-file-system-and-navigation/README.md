@@ -30,17 +30,17 @@ flowchart TB
 
 ## Commands
 ```bash
-pwd                      # where am I
-ls -lah                  # list: long + hidden + human sizes
-cd /var/log && ls
+pwd                      # pwd = "print working directory" — where am I
+ls -lah                  # ls = "list": long + hidden + human sizes
+cd /var/log && ls        # cd = "change directory"
 cd ~                     # home
 cd -                     # jump back to previous dir
 
-mkdir -p projects/app/logs
-touch projects/app/README.md
-cp projects/app/README.md /tmp/
-mv /tmp/README.md /tmp/notes.md
-rm /tmp/notes.md
+mkdir -p projects/app/logs        # mkdir = "make directory" (-p: parents too)
+touch projects/app/README.md      # create an empty file (or update its date)
+cp projects/app/README.md /tmp/   # cp = "copy"
+mv /tmp/README.md /tmp/notes.md   # mv = "move" — also how you rename
+rm /tmp/notes.md                  # rm = "remove"
 
 find / -name "*.log" -type f 2>/dev/null | head
 find . -type d                    # only directories

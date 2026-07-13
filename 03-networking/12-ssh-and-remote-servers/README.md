@@ -18,7 +18,7 @@ The first time you connect, the server's identity is recorded in your `known_hos
 
 ## Commands
 ```bash
-# generate a key pair (-C adds a label so you know whose key this is)
+# generate a key pair   (ssh-keygen = "SSH key generator"; -C adds a label)
 ssh-keygen -t ed25519 -C "you@your-laptop"
 
 # copy the public key to a server
@@ -35,7 +35,7 @@ Host prod
 EOF
 ssh prod            # that's it
 
-# transfer files
+# transfer files   (scp = "secure copy", sftp = "SSH File Transfer Protocol")
 scp ./app.tar.gz prod:/tmp/
 scp prod:/var/log/nginx/error.log ./
 sftp prod           # interactive: put / get

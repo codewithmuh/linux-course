@@ -20,7 +20,7 @@ Unix tools see text as **lines** made of **fields**. Chain small tools into a pi
 
 ## Commands
 ```bash
-# counting + ranking
+# counting + ranking   (uniq = "unique", wc = "word count")
 cut -d: -f1 /etc/passwd | sort | uniq | wc -l
 sort access.log | uniq -c | sort -rn | head
 
@@ -28,12 +28,12 @@ sort access.log | uniq -c | sort -rn | head
 cut -d, -f1,3 data.csv
 paste names.txt scores.txt
 
-# awk: fields, filters, sums
+# awk: fields, filters, sums   (named after its creators: Aho, Weinberger, Kernighan)
 awk -F: '{print $1}' /etc/passwd
 awk '{print $1}' access.log | sort | uniq -c | sort -rn | head   # top IPs
 awk -F: '$3 >= 1000 {print $1}' /etc/passwd                       # real users
 
-# sed: substitution + in-place edit
+# sed = "stream editor": substitution + in-place edit
 sed 's/error/ERROR/g' app.log
 sed -i 's/localhost/127.0.0.1/g' config.ini
 sed -n '10,20p' file.txt                                          # print a line range

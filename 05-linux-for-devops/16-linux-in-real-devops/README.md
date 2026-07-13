@@ -37,8 +37,8 @@ So `*/15 * * * *` means "every 15 minutes." Each `*` is a wildcard meaning "ever
 
 ## Commands
 ```bash
-# cron: run the health check every 15 minutes
-crontab -e
+# cron (from Greek "chronos" = time): run the health check every 15 minutes
+crontab -e                              # crontab = "cron table" — your job list
 # add this line, then save:
 # */15 * * * * /home/deploy/healthcheck.sh >> /var/log/health.log 2>&1
 crontab -l                              # list your scheduled jobs
@@ -49,11 +49,11 @@ echo "$APP_ENV"                         # read it back
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc   # make it persist
 
 # disk management
-df -h                                   # free space per filesystem
-du -sh /var/* | sort -rh | head         # biggest directories under /var
+df -h                                   # df = "disk free" — space per filesystem
+du -sh /var/* | sort -rh | head         # du = "disk usage" — biggest directories
 du -h --max-depth=1 /var/log | sort -rh # drill into one directory
 
-# compression + archives
+# compression + archives   (tar = "tape archive", gzip = "GNU zip")
 tar -czf logs.tar.gz /var/log/myapp     # create a gzipped archive
 tar -xzf logs.tar.gz -C /tmp/restore    # extract it somewhere
 gzip big.log && gunzip big.log.gz       # compress / decompress a single file

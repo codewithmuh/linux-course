@@ -27,23 +27,23 @@ Groups live in `/etc/group`, and who is allowed to run `sudo` is defined in `/et
 
 ## Commands
 ```bash
-id
-whoami
-groups
+id                     # id = "identity" — my user + group numbers
+whoami                 # literally "who am I" — my username
+groups                 # which groups I belong to
 
-# create a user + set password
-sudo useradd -m -s /bin/bash deploy
+# create a user + set password   (useradd = "user add", passwd = "password")
+sudo useradd -m -s /bin/bash deploy    # -m: make a home folder
 sudo passwd deploy
 
-# grant sudo (Debian/Ubuntu)
+# grant sudo   (usermod = "user modify", -aG = "append to Groups")
 sudo usermod -aG sudo deploy
 
 # inspect
 id deploy
 grep deploy /etc/passwd
-getent group sudo
+getent group sudo      # getent = "get entries" from system databases
 
-# run one command as another user
+# run one command as another user   (sudo = "superuser do")
 sudo -u deploy whoami
 ```
 

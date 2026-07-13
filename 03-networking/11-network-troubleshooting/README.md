@@ -18,17 +18,17 @@ It helps to know the difference between a **listening socket** (a service waitin
 ## Commands
 ```bash
 # what's listening
-ss -tulpn                 # modern (t=tcp u=udp l=listen p=process n=numeric)
-sudo netstat -tulpn       # classic equivalent
+ss -tulpn                 # ss = "socket statistics" (t=tcp u=udp l=listen p=process n=numeric)
+sudo netstat -tulpn       # netstat = "network statistics" — the classic version
 
-# DNS
+# DNS   (dig = "domain information groper", nslookup = "name server lookup")
 dig example.com +short
 dig example.com A
 nslookup example.com
 
 # path + port reachability
 traceroute example.com
-nc -zv example.com 443    # is the port open?
+nc -zv example.com 443    # nc = "netcat" — is the port open?
 nc -zv 10.0.0.5 22        # can I reach SSH on this host?
 ```
 

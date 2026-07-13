@@ -27,14 +27,14 @@ For logs, systemd records everything in a central journal you read with `journal
 
 ## Commands
 ```bash
-systemctl status nginx
+systemctl status nginx             # systemctl = "system control"
 sudo systemctl start nginx
 sudo systemctl enable nginx        # start on boot
 sudo systemctl restart nginx
 systemctl is-active nginx
 systemctl list-units --type=service
 
-# logs
+# logs   (journalctl = "journal control" — read systemd's log book)
 journalctl -u nginx --no-pager | tail
 journalctl -u nginx -f             # follow live
 journalctl --since "10 min ago"

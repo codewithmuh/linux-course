@@ -25,20 +25,20 @@ There are two big families you'll meet constantly:
 
 ## Commands
 ```bash
-# Debian / Ubuntu
+# Debian / Ubuntu   (apt = "Advanced Package Tool")
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y htop tree jq
 apt search nginx
 apt show nginx
-dpkg -l | grep nginx
+dpkg -l | grep nginx             # dpkg = "Debian package"
 sudo apt remove --purge htop
 
-# Red Hat / Fedora / Amazon Linux
+# Red Hat / Fedora / Amazon Linux   (dnf = "Dandified YUM", yum = "Yellowdog Updater, Modified")
 sudo dnf update -y
 sudo dnf install -y htop
 sudo yum install -y git          # older systems
-rpm -qa | grep git
+rpm -qa | grep git               # rpm = "Red Hat Package Manager"
 ```
 
 ## What the names mean

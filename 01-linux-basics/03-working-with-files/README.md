@@ -22,20 +22,20 @@ flowchart LR
 
 ## Commands
 ```bash
-cat /etc/os-release
-less /var/log/syslog          # q to quit; / to search
-head -n 20 /var/log/syslog
+cat /etc/os-release           # cat = "concatenate" — print a file
+less /var/log/syslog          # a pager ("less is more"); q to quit, / to search
+head -n 20 /var/log/syslog    # head/tail = first / last lines
 tail -n 20 /var/log/syslog
-tail -f /var/log/syslog       # follow live (Ctrl-C to stop)
+tail -f /var/log/syslog       # -f = "follow" live (Ctrl-C to stop)
 
 # edit
 nano notes.txt                # beginner-friendly
 # vim survival: press i to insert, Esc to stop, :wq to save+quit
 
-# search + pipes + redirection
-grep -i "error" /var/log/syslog
+# search + pipes + redirection   (grep = "global regular expression print")
+grep -i "error" /var/log/syslog       # -i: ignore upper/lower case
 grep -rn "listen" /etc/nginx/         # recursive, with line numbers
-cat /etc/passwd | grep bash | wc -l   # count bash users
+cat /etc/passwd | grep bash | wc -l   # wc = "word count" (-l: count lines)
 ls -l /etc > etc-listing.txt          # overwrite a file
 echo "deploy done" >> deploy.log      # append to a file
 ```

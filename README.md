@@ -31,6 +31,7 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 - [Getting started](#-getting-started)
 - [Practice online — no install](#-practice-online--no-install)
 - [How to use this repo](#-how-to-use-this-repo)
+- [What every command name means](#-what-every-command-name-means)
 - [Prerequisites](#-prerequisites)
 - [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
@@ -164,6 +165,65 @@ Don't want to touch your own computer yet? Practice Linux **in the browser**:
 2. Follow along with the commands in the lesson `README.md`.
 3. Grab the **cheat sheet** and any `scripts/` you want to keep.
 4. Try the **practice challenge** at the end of each lesson.
+
+## 🔤 What every command name means
+
+Linux commands look cryptic, but almost all of them are **short forms of English words**. Read the full words once and the commands become easy to remember — `usermod` is not magic, it is just "user modify". The whole course dictionary:
+
+| Command / word | Stands for |
+|---|---|
+| `pwd` | **p**rint **w**orking **d**irectory |
+| `ls` | **l**i**s**t |
+| `cd` | **c**hange **d**irectory |
+| `mkdir` | **m**a**k**e **dir**ectory |
+| `cp` / `mv` / `rm` | **c**o**p**y / **m**o**v**e / **r**e**m**ove |
+| `cat` | con**cat**enate — joins files; also prints one |
+| `less` | a joke on the older pager `more` — "less is more" |
+| `grep` | **g**lobal **r**egular **e**xpression **p**rint |
+| `wc` | **w**ord **c**ount |
+| `uniq` | **uniq**ue |
+| `sed` | **s**tream **ed**itor |
+| `awk` | its creators' initials: **A**ho, **W**einberger, **K**ernighan |
+| `vim` | **V**i **im**proved |
+| `uname` | **U**nix **name** |
+| `whoami` | literally "who am I" |
+| `sudo` | **s**uper**u**ser **do** |
+| `useradd` / `usermod` | **user add** / **user mod**ify |
+| `passwd` | **passw**or**d** |
+| `id` | **id**entity |
+| `chmod` | **ch**ange **mod**e (the permission set) |
+| `chown` / `chgrp` | **ch**ange **own**er / **gr**ou**p** |
+| `rwx` | **r**ead · **w**rite · e**x**ecute |
+| SUID / SGID | **S**et **U**ser / **G**roup **ID** |
+| `ps` | **p**rocess **s**tatus |
+| `top` / `htop` | **t**able **o**f **p**rocesses / **H**isham's top |
+| PID | **p**rocess **ID** |
+| `bg` / `fg` | **b**ack**g**round / **f**ore**g**round |
+| SIGTERM / SIGKILL | **sig**nal **term**inate / **sig**nal **kill** |
+| daemon | a program that runs in the background |
+| `systemd` / `systemctl` | **system d**aemon / **system c**on**t**ro**l** |
+| `journalctl` | **journal c**on**t**ro**l** — systemd's log book |
+| `apt` | **A**dvanced **P**ackage **T**ool |
+| `dpkg` / `rpm` | **D**ebian **p**ac**k**a**g**e / **R**ed Hat **P**ackage **M**anager |
+| `yum` / `dnf` | **Y**ellowdog **U**pdater, **M**odified / **D**andified YUM |
+| IP / DNS | **I**nternet **P**rotocol / **D**omain **N**ame **S**ystem |
+| `ping` | named after the submarine sonar "ping" sound |
+| `curl` / `wget` | **c**lient for **URL**s / **w**eb **get** |
+| `ss` / `netstat` | **s**ocket **s**tatistics / **net**work **stat**istics |
+| `dig` / `nslookup` | **d**omain **i**nformation **g**roper / **n**ame **s**erver **lookup** |
+| `nc` | **n**et**c**at — like `cat`, but over the network |
+| `ssh` | **S**ecure **Sh**ell |
+| `scp` / `sftp` | **s**ecure **c**o**p**y / **S**SH **F**ile **T**ransfer **P**rotocol |
+| `bash` | **B**ourne **A**gain **SH**ell — a pun on the original shell by Steve Bourne |
+| shebang `#!` | "sharp" (`#`) + "bang" (`!`) |
+| cron / `crontab` | Greek *chronos* = time / **cron tab**le |
+| `df` / `du` | **d**isk **f**ree / **d**isk **u**sage |
+| `tar` | **t**ape **ar**chive — from the days of tape backups |
+| `gzip` | **G**NU **zip** |
+| `wsl` | **W**indows **S**ubsystem for **L**inux |
+| `/etc` `/var` `/usr` `/tmp` `/bin` | et cetera (config) · **var**iable data · **U**nix **s**ystem **r**esources · **t**e**mp**orary · **bin**aries |
+
+Every lesson repeats the names it uses — both in the command comments and in its own small "What the names mean" table.
 
 ## ✅ Prerequisites
 

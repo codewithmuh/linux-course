@@ -27,22 +27,22 @@ Always try SIGTERM first; reach for `kill -9` only when a process refuses to sto
 
 ## Commands
 ```bash
-ps aux | head
+ps aux | head       # ps = "process status" — list running processes
 ps aux | grep nginx
-top            # q to quit; watch CPU/MEM
-htop           # nicer, install: sudo apt install htop
+top                 # top = "table of processes"; q to quit
+htop                # Hisham's top — nicer; install: sudo apt install htop
 
-# background / foreground
-sleep 300 &
+# background / foreground   (bg / fg = "background" / "foreground")
+sleep 300 &         # & = run it in the background
 jobs
 fg %1
 # Ctrl-Z to suspend, then:
 bg %1
 
-# kill by PID and by name
-kill <pid>          # SIGTERM
-kill -9 <pid>       # SIGKILL (last resort)
-pkill -f myscript
+# kill by PID ("process ID") and by name
+kill <pid>          # SIGTERM = "signal: terminate" — polite
+kill -9 <pid>       # SIGKILL = "signal: kill" — forced, last resort
+pkill -f myscript   # pkill = "process kill" by name
 ```
 
 ## What the names mean
