@@ -25,6 +25,14 @@ flowchart LR
 
 For logs, systemd records everything in a central journal you read with `journalctl`. Older services still write plain text files under `/var/log`, and you can watch those with `tail -f`.
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `systemd` | **system** **d**aemon — a *daemon* is a program that runs in the background |
+| `systemctl` | **system** **c**on**t**ro**l** |
+| `journalctl` | **journal** **c**on**t**ro**l** — the journal is systemd's log book |
+
 ## Commands
 ```bash
 systemctl status nginx             # systemctl = "system control" — running? + last logs
@@ -45,14 +53,6 @@ sudo nano /etc/systemd/system/hello.service   # write the unit file
 sudo systemctl daemon-reload                  # tell systemd to re-read unit files
 sudo systemctl enable --now hello.service     # start now + on every boot
 ```
-
-## What the names mean
-
-| Command | Stands for |
-|---|---|
-| `systemd` | **system** **d**aemon — a *daemon* is a program that runs in the background |
-| `systemctl` | **system** **c**on**t**ro**l** |
-| `journalctl` | **journal** **c**on**t**ro**l** — the journal is systemd's log book |
 
 ## In production
 You run a Python or Node app as a managed service so it survives crashes and reboots, then tail its logs live with `journalctl -u myapp -f` while a deploy goes out — watching for errors as the new version comes up.

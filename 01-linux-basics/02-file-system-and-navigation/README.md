@@ -28,25 +28,6 @@ flowchart TB
 
 **Paths** are either **absolute** (start at `/`, e.g. `/var/log/nginx`) or **relative** (from where you are). Handy shortcuts: `.` = here, `..` = up one, `~` = your home.
 
-## Commands
-```bash
-pwd                      # pwd = "print working directory" — where am I
-ls -lah                  # ls = "list": long + hidden + human sizes
-cd /var/log && ls        # cd = "change directory"
-cd ~                     # home
-cd -                     # jump back to previous dir
-
-mkdir -p projects/app/logs        # mkdir = "make directory" (-p: parents too)
-touch projects/app/README.md      # create an empty file (or update its date)
-cp projects/app/README.md /tmp/   # cp = "copy": copy the file into /tmp
-mv /tmp/README.md /tmp/notes.md   # mv = "move": here it renames the file
-rm /tmp/notes.md                  # rm = "remove": delete it (no trash bin!)
-
-find / -name "*.log" -type f 2>/dev/null | head   # search the whole disk for .log files
-find . -type d                    # only directories
-find . -mtime -1                  # changed in the last day
-```
-
 ## What the names mean
 Commands:
 
@@ -68,6 +49,25 @@ And the folder names:
 | `/usr` | **U**nix **s**ystem **r**esources — installed software |
 | `/tmp` | **t**e**mp**orary files |
 | `/bin` | **bin**aries — the programs themselves |
+
+## Commands
+```bash
+pwd                      # pwd = "print working directory" — where am I
+ls -lah                  # ls = "list": long + hidden + human sizes
+cd /var/log && ls        # cd = "change directory"
+cd ~                     # home
+cd -                     # jump back to previous dir
+
+mkdir -p projects/app/logs        # mkdir = "make directory" (-p: parents too)
+touch projects/app/README.md      # create an empty file (or update its date)
+cp projects/app/README.md /tmp/   # cp = "copy": copy the file into /tmp
+mv /tmp/README.md /tmp/notes.md   # mv = "move": here it renames the file
+rm /tmp/notes.md                  # rm = "remove": delete it (no trash bin!)
+
+find / -name "*.log" -type f 2>/dev/null | head   # search the whole disk for .log files
+find . -type d                    # only directories
+find . -mtime -1                  # changed in the last day
+```
 
 ## In production
 Debugging a service is mostly navigation: `cd /etc/nginx` to read the config, `cd /var/log/nginx` to read the logs. Knowing **where things live** is half the job.

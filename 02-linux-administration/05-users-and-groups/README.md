@@ -25,6 +25,18 @@ flowchart LR
 
 Groups live in `/etc/group`, and who is allowed to run `sudo` is defined in `/etc/sudoers`.
 
+## What the names mean
+Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
+
+| Command | Stands for |
+|---|---|
+| `sudo` | **s**uper**u**ser **do** — run one command as the all-powerful root user |
+| `useradd` | **user add** |
+| `usermod` | **user mod**ify |
+| `passwd` | **passw**or**d** |
+| `id` | **id**entity — your user and group numbers |
+| `-aG` | **a**ppend to **G**roups (add, don't replace) |
+
 ## Commands
 ```bash
 id                     # id = "identity" — my user + group numbers
@@ -46,18 +58,6 @@ getent group sudo                      # getent = "get entries": who is in the s
 # run one command as another user   (sudo = "superuser do")
 sudo -u deploy whoami                  # run whoami as deploy → prints: deploy
 ```
-
-## What the names mean
-Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
-
-| Command | Stands for |
-|---|---|
-| `sudo` | **s**uper**u**ser **do** — run one command as the all-powerful root user |
-| `useradd` | **user add** |
-| `usermod` | **user mod**ify |
-| `passwd` | **passw**or**d** |
-| `id` | **id**entity — your user and group numbers |
-| `-aG` | **a**ppend to **G**roups (add, don't replace) |
 
 ## In production
 Standard server hardening creates a non-root `deploy` user, gives it sudo, and disables direct root SSH login. Apps and CI pipelines connect as `deploy`, never as root — so no single compromised login owns the whole box.

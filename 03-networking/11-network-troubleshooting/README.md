@@ -15,6 +15,16 @@
 
 It helps to know the difference between a **listening socket** (a service waiting for connections on a port) and an **established connection** (an active conversation already in progress). `ss` shows you both. When traffic leaves your machine but never arrives, `traceroute` shows you *where* along the path it dies.
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `ss` | **s**ocket **s**tatistics |
+| `netstat` | **net**work **stat**istics |
+| `dig` | **d**omain **i**nformation **g**roper |
+| `nslookup` | **n**ame **s**erver **lookup** |
+| `nc` | **n**et**c**at — like `cat`, but over the network |
+
 ## Commands
 ```bash
 # what's listening
@@ -31,16 +41,6 @@ traceroute example.com    # show every network hop between you and the target
 nc -zv example.com 443    # nc = "netcat" — is the port open?
 nc -zv 10.0.0.5 22        # can I reach SSH on this host?
 ```
-
-## What the names mean
-
-| Command | Stands for |
-|---|---|
-| `ss` | **s**ocket **s**tatistics |
-| `netstat` | **net**work **stat**istics |
-| `dig` | **d**omain **i**nformation **g**roper |
-| `nslookup` | **n**ame **s**erver **lookup** |
-| `nc` | **n**et**c**at — like `cat`, but over the network |
 
 ## In production
 An app can't reach its database. You check in order: `nc -zv db-host 5432` (is the port open?), `dig db-host` (is DNS resolving?), and `ss -tulpn` on the DB box (is Postgres actually listening?). That finds the exact break in under a minute.

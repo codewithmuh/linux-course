@@ -161,6 +161,20 @@ def vpanel(sc, y, h, title, color, tsize=22):
     return y + 46
 
 
+def decoder_panel(sc, y, color, pairs):
+    """'Command names, decoded' — two columns of cmd = full English form."""
+    rows = (len(pairs) + 1) // 2
+    ph = 46 + 26 + rows * 36 + 20
+    cy = vpanel(sc, y, ph, "Command names, decoded — they are just short English words", color)
+    col_x = [M + 70, W / 2 + 40]
+    for i, (cmd, meaning) in enumerate(pairs):
+        cx = col_x[i // rows]
+        ry = cy + 24 + (i % rows) * 36
+        sc.text(cx, ry, cmd, 18.5, DARK, kind="mono")
+        sc.text(cx + 230, ry + 1, "= " + meaning, 17, GRAY)
+    return y + ph + GAP
+
+
 def outcome_banner(sc, y, color, text):
     h = 62
     sc.rect(M, y, CW, h, stroke=color, fill=TINT[color], sw=2.5, radius=14)
@@ -318,6 +332,20 @@ def module1():
          ("sed -i 's/a/b/g' file", "edit the file in place")],
         "awk over an access log gives you the top 10 client IPs in seconds.")
 
+    y = decoder_panel(sc, y, "#1971c2", [
+        ("pwd", "print working directory"),
+        ("ls  ·  cd", "list  ·  change directory"),
+        ("mkdir", "make directory"),
+        ("cp · mv · rm", "copy · move · remove"),
+        ("cat", "concatenate — joins files"),
+        ("grep", "global regular expression print"),
+        ("wc", "word count"),
+        ("sed", "stream editor"),
+        ("awk", "its creators: Aho, Weinberger, Kernighan"),
+        ("ssh", "Secure Shell"),
+        ("uname", "Unix name"),
+        ("wsl", "Windows Subsystem for Linux"),
+    ])
     y = outcome_banner(sc, y, "#1971c2",
         "By the end of Module 1 — you can navigate a server, manage files, and shape text output.")
     sc.h = y + 50
@@ -432,6 +460,20 @@ def module2():
          ("dnf / yum install pkg", "Red Hat family (RHEL, Amazon)")],
         "apt update refreshes the list, apt upgrade installs from it — always that order.")
 
+    y = decoder_panel(sc, y, "#0c8599", [
+        ("sudo", "superuser do"),
+        ("useradd · usermod", "user add · user modify"),
+        ("passwd", "password"),
+        ("chmod", "change mode (the permissions)"),
+        ("chown · chgrp", "change owner · change group"),
+        ("ps", "process status"),
+        ("PID", "process ID"),
+        ("SIGTERM · SIGKILL", "signal terminate · signal kill"),
+        ("systemctl", "system control"),
+        ("journalctl", "journal control — systemd's log book"),
+        ("apt", "Advanced Package Tool"),
+        ("rpm", "Red Hat Package Manager"),
+    ])
     y = outcome_banner(sc, y, "#0c8599",
         "By the end of Module 2 — you can run a server: users, permissions, processes, services, packages.")
     sc.h = y + 50
@@ -520,6 +562,18 @@ def module3():
             18, "#5f3dc4", bold=True, align="center")
     y += ph + GAP
 
+    y = decoder_panel(sc, y, "#9c36b5", [
+        ("IP", "Internet Protocol"),
+        ("DNS", "Domain Name System"),
+        ("ping", "named after the submarine sonar sound"),
+        ("curl", "client for URLs"),
+        ("wget", "web get"),
+        ("ss", "socket statistics"),
+        ("dig", "domain information groper"),
+        ("nc", "netcat — like cat, over the network"),
+        ("scp", "secure copy"),
+        ("sftp", "SSH File Transfer Protocol"),
+    ])
     y = outcome_banner(sc, y, "#9c36b5",
         "By the end of Module 3 — you can debug \"why can't I connect?\" step by step, and reach any server securely.")
     sc.h = y + 50
@@ -613,6 +667,14 @@ def module4():
     sc.text(M + 100, cy + 292, "cron field order:   minute  hour  day  month  weekday", 19, DARK, kind="mono")
     y += ph + GAP
 
+    y = decoder_panel(sc, y, "#2f9e44", [
+        ("bash", "Bourne Again SHell — a pun on Steve Bourne's shell"),
+        ("#!  (shebang)", "\"sharp\" (#) + \"bang\" (!)"),
+        ("$?", "exit code of the last command"),
+        ("$@  ·  $#", "all arguments · how many arguments"),
+        ("echo", "prints back what you give it"),
+        ("trap", "catch a signal and run cleanup"),
+    ])
     y = outcome_banner(sc, y, "#2f9e44",
         "By the end of Module 4 — you write scripts that are safe to run with nobody watching.")
     sc.h = y + 50
@@ -698,6 +760,16 @@ def module5():
          ("6. kill the app — watch systemd heal it", "the proof")],
         "Test ssh deploy@ip from a second terminal BEFORE you log out — never lock yourself out.")
 
+    y = decoder_panel(sc, y, "#e03131", [
+        ("cron", "from Greek chronos — time"),
+        ("crontab", "cron table — your list of scheduled jobs"),
+        ("df", "disk free"),
+        ("du", "disk usage"),
+        ("tar", "tape archive — from the tape-backup days"),
+        ("gzip", "GNU zip"),
+        ("daemon", "a program that runs in the background"),
+        ("ops", "operations — the day-to-day work"),
+    ])
     y = outcome_banner(sc, y, "#e03131",
         "Finish line — a secured, monitored, app-serving Linux server you built end to end.")
     sc.h = y + 50

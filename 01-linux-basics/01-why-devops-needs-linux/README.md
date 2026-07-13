@@ -63,6 +63,17 @@ More than **9 out of 10 cloud servers run Linux**. Four simple reasons why it wo
 
 So this is the deal: every server you will ever touch is a Linux box you reach over **SSH**. Learn Linux once, and you can work on all of them.
 
+## What the names mean
+Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
+
+| Command | Stands for |
+|---|---|
+| `ssh` | **S**ecure **Sh**ell — an encrypted connection to another machine |
+| `wsl` | **W**indows **S**ubsystem for **L**inux |
+| `uname` | **U**nix **name** — prints system information |
+| `cat` | con**cat**enate — joins files; also the quick way to print one |
+| `whoami` | literally "who am I" — prints your username |
+
 ## Commands
 ```bash
 # Windows: ONE command installs both WSL and Ubuntu.
@@ -92,17 +103,6 @@ ssh ubuntu@<server-ip>         # log in as user "ubuntu" on that machine
 uname -a                       # proof: this is the server's Linux, not yours
 exit                           # close the connection — back to your machine
 ```
-
-## What the names mean
-Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
-
-| Command | Stands for |
-|---|---|
-| `ssh` | **S**ecure **Sh**ell — an encrypted connection to another machine |
-| `wsl` | **W**indows **S**ubsystem for **L**inux |
-| `uname` | **U**nix **name** — prints system information |
-| `cat` | con**cat**enate — joins files; also the quick way to print one |
-| `whoami` | literally "who am I" — prints your username |
 
 ## In production
 Launch a cloud VM (AWS EC2, DigitalOcean, etc.), then connect with `ssh user@ip`. From that moment, everything you do — installing software, deploying apps, reading logs — happens over this connection. Getting comfortable here is step zero of DevOps.

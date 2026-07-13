@@ -16,6 +16,16 @@ SSH secures a connection with a **key pair**: a **private key** that never leave
 
 The first time you connect, the server's identity is recorded in your `known_hosts` so you're warned if it ever changes.
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `ssh` | **S**ecure **Sh**ell |
+| `scp` | **s**ecure **c**o**p**y |
+| `sftp` | **S**SH **F**ile **T**ransfer **P**rotocol |
+| `ssh-keygen` | SSH **key gen**erator |
+| `ed25519` | the name of the math curve the key uses — just pick it, it is the modern default |
+
 ## Commands
 ```bash
 # generate a key pair   (ssh-keygen = "SSH key generator"; -C adds a label)
@@ -44,16 +54,6 @@ sftp prod           # interactive session: put = upload, get = download
 
 # hardening (server side): disable password + root login in /etc/ssh/sshd_config
 ```
-
-## What the names mean
-
-| Command | Stands for |
-|---|---|
-| `ssh` | **S**ecure **Sh**ell |
-| `scp` | **s**ecure **c**o**p**y |
-| `sftp` | **S**SH **F**ile **T**ransfer **P**rotocol |
-| `ssh-keygen` | SSH **key gen**erator |
-| `ed25519` | the name of the math curve the key uses — just pick it, it is the modern default |
 
 ## In production
 You set up passwordless key-based access to a production box, add a `~/.ssh/config` alias so `ssh prod` just works, and `scp` a build artifact up for deployment.

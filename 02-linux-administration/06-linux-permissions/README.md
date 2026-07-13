@@ -27,6 +27,16 @@ Those same permissions have a **numeric** shorthand: read = 4, write = 2, execut
 
 Three **special bits** sit on top: **SUID** lets a program run as its owner (that's why `passwd` works), **SGID** makes new files in a directory inherit its group, and the **sticky bit** stops users from deleting each other's files — which is why `/tmp` is `1777`.
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `chmod` | **ch**ange **mod**e — "mode" is the permission set |
+| `chown` | **ch**ange **own**er |
+| `chgrp` | **ch**ange **gr**ou**p** |
+| `rwx` | **r**ead · **w**rite · e**x**ecute |
+| SUID / SGID | **S**et **U**ser **ID** / **S**et **G**roup **ID** |
+
 ## Commands
 ```bash
 ls -l script.sh                  # see the permission string
@@ -43,16 +53,6 @@ ls -l /usr/bin/passwd            # the 's' = SUID ("Set User ID"): always runs a
 chmod g+s shared/                # SGID ("Set Group ID"): new files in shared/ inherit its group
 ls -ld /tmp                      # the 't' = sticky bit: all can add files, only owners delete their own
 ```
-
-## What the names mean
-
-| Command | Stands for |
-|---|---|
-| `chmod` | **ch**ange **mod**e — "mode" is the permission set |
-| `chown` | **ch**ange **own**er |
-| `chgrp` | **ch**ange **gr**ou**p** |
-| `rwx` | **r**ead · **w**rite · e**x**ecute |
-| SUID / SGID | **S**et **U**ser **ID** / **S**et **G**roup **ID** |
 
 ## In production
 Permissions explain the everyday puzzles: an app can't read its config because the owner is wrong, an SSH key is rejected until you `chmod 600` it, and a shared team directory uses SGID so every teammate can collaborate on the files without fighting over ownership.

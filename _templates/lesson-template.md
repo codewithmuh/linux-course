@@ -16,15 +16,15 @@ flowchart LR
   A[thing] --> B[other thing]
 ```
 
-## Commands
-```bash
-# annotated, copy-paste-ready
-```
-
 ## What the names mean
 | Command | Stands for |
 |---|---|
 | `cmd` | **c**o**m**man**d** — expand the abbreviation so it is easy to remember |
+
+## Commands
+```bash
+# annotated, copy-paste-ready
+```
 
 ## In production
 <How this is actually used on the job — a concrete, real-world scenario.>

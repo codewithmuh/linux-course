@@ -19,6 +19,15 @@ A **shell script** is just a file full of the commands you'd otherwise type by h
 
 Bash conditions run on **exit codes**, not the words `true`/`false`: a command that exits `0` counts as success (truthy), anything else is failure. That's what drives `if`.
 
+## What the names mean
+
+| Name | Stands for |
+|---|---|
+| `bash` | **B**ourne **A**gain **SH**ell — a pun: the original shell was written by Steve Bourne |
+| shebang `#!` | "sharp" (`#`) + "bang" (`!`) |
+| `echo` | prints back what you give it — like an echo |
+| `read` | reads what the user types |
+
 ## Commands
 
 ```bash
@@ -48,15 +57,6 @@ chmod +x hello.sh     # chmod +x = make the file executable
 ./hello.sh            # run it — prompts for your name
 ./hello.sh Rashid     # run it with the name as an argument
 ```
-
-## What the names mean
-
-| Name | Stands for |
-|---|---|
-| `bash` | **B**ourne **A**gain **SH**ell — a pun: the original shell was written by Steve Bourne |
-| shebang `#!` | "sharp" (`#`) + "bang" (`!`) |
-| `echo` | prints back what you give it — like an echo |
-| `read` | reads what the user types |
 
 ## In production
 Your very first useful script is a tiny status checker: it asks whether a service is running and prints a clear answer. That pattern — check something, report it plainly — is the seed of every health-check and bootstrap script you'll write later.

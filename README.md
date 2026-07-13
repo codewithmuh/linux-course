@@ -28,10 +28,10 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 - [What you'll learn](#-what-youll-learn)
 - [Course content](#-course-content)
 - [Module maps](#-module-maps)
+- [What every command name means](#-what-every-command-name-means)
 - [Getting started](#-getting-started)
 - [Practice online — no install](#-practice-online--no-install)
 - [How to use this repo](#-how-to-use-this-repo)
-- [What every command name means](#-what-every-command-name-means)
 - [Prerequisites](#-prerequisites)
 - [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
@@ -121,54 +121,12 @@ Each module comes with a one-page visual — lesson cards plus the key concepts 
 
 > Maps are editable [Excalidraw](https://excalidraw.com) files — open any `.excalidraw` in the browser or the VS Code Excalidraw extension to remix or export your own.
 
-## 🚀 Getting started
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/codewithmuh/linux-course.git
-cd linux-course
-
-# 2. Open the lesson for the video you're watching
-cd 01-linux-basics/01-why-devops-needs-linux
-
-# 3. Read the lesson and run the scripts
-cat README.md
-bash scripts/server-info.sh
-```
-
-No Linux machine yet? **Start with a free local install — no cloud account needed:**
-
-- **Windows** → open **PowerShell as Administrator**, run `wsl --install -d Ubuntu`, restart — this one command installs WSL **and** Ubuntu together
-- **macOS** → `brew install --cask multipass`, then `multipass launch --name devops` and `multipass shell devops` — a real Ubuntu VM in three commands
-- **Linux desktop** → open your terminal, you are ready
-
-**Optional, for later:** a free-tier cloud VM (AWS EC2, DigitalOcean, etc.) gives you a public server on the internet. Nice to have — but every lesson in this course, **including the capstone**, also works on the free local VM.
-
-> ⚠️ The macOS Terminal looks similar, but **macOS is not Linux** — commands like `apt` and `systemctl` do not exist there. For this course, work inside Ubuntu: WSL, Multipass, or a cloud VM.
-
-## 🕹️ Practice online — no install
-
-Don't want to touch your own computer yet? Practice Linux **in the browser**:
-
-| Option | What you get |
-|---|---|
-| **GitHub Codespaces** — on this repo, click **Code → Codespaces → Create codespace** | A real Ubuntu terminal in the browser, with all course files already in it. Free monthly hours on every GitHub account. |
-| [Killercoda Ubuntu playground](https://killercoda.com/playgrounds/scenario/ubuntu) | A fresh Ubuntu machine for 1 hour, with root access — services and `systemctl` work here too. |
-| [Google Cloud Shell](https://shell.cloud.google.com) | A free Linux shell with 5 GB of storage (needs only a Google account). |
-| [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/) | A free game you play over SSH — perfect extra practice for Modules 1 and 3. |
-
-> Honest limit: browser terminals are great for Modules 1–4 (commands, files, text, Bash). For the **services lesson** and the **capstone** you want a real VM — the free local install above is enough.
-
-## 📖 How to use this repo
-
-1. Open the **module → lesson** folder for the video you're watching.
-2. Follow along with the commands in the lesson `README.md`.
-3. Grab the **cheat sheet** and any `scripts/` you want to keep.
-4. Try the **practice challenge** at the end of each lesson.
-
 ## 🔤 What every command name means
 
 Linux commands look cryptic, but almost all of them are **short forms of English words**. Read the full words once and the commands become easy to remember — `usermod` is not magic, it is just "user modify". The whole course dictionary:
+
+<details>
+<summary><b>📖 Open the full dictionary (50+ names)</b></summary>
 
 | Command / word | Stands for |
 |---|---|
@@ -223,7 +181,54 @@ Linux commands look cryptic, but almost all of them are **short forms of English
 | `wsl` | **W**indows **S**ubsystem for **L**inux |
 | `/etc` `/var` `/usr` `/tmp` `/bin` | et cetera (config) · **var**iable data · **U**nix **s**ystem **r**esources · **t**e**mp**orary · **bin**aries |
 
+</details>
+
 Every lesson repeats the names it uses — both in the command comments and in its own small "What the names mean" table.
+
+## 🚀 Getting started
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/codewithmuh/linux-course.git
+cd linux-course
+
+# 2. Open the lesson for the video you're watching
+cd 01-linux-basics/01-why-devops-needs-linux
+
+# 3. Read the lesson and run the scripts
+cat README.md
+bash scripts/server-info.sh
+```
+
+No Linux machine yet? **Start with a free local install — no cloud account needed:**
+
+- **Windows** → open **PowerShell as Administrator**, run `wsl --install -d Ubuntu`, restart — this one command installs WSL **and** Ubuntu together
+- **macOS** → `brew install --cask multipass`, then `multipass launch --name devops` and `multipass shell devops` — a real Ubuntu VM in three commands
+- **Linux desktop** → open your terminal, you are ready
+
+**Optional, for later:** a free-tier cloud VM (AWS EC2, DigitalOcean, etc.) gives you a public server on the internet. Nice to have — but every lesson in this course, **including the capstone**, also works on the free local VM.
+
+> ⚠️ The macOS Terminal looks similar, but **macOS is not Linux** — commands like `apt` and `systemctl` do not exist there. For this course, work inside Ubuntu: WSL, Multipass, or a cloud VM.
+
+## 🕹️ Practice online — no install
+
+Don't want to touch your own computer yet? Practice Linux **in the browser**:
+
+| Option | What you get |
+|---|---|
+| **GitHub Codespaces** — on this repo, click **Code → Codespaces → Create codespace** | A real Ubuntu terminal in the browser, with all course files already in it. Free monthly hours on every GitHub account. |
+| [Killercoda Ubuntu playground](https://killercoda.com/playgrounds/scenario/ubuntu) | A fresh Ubuntu machine for 1 hour, with root access — services and `systemctl` work here too. |
+| [Google Cloud Shell](https://shell.cloud.google.com) | A free Linux shell with 5 GB of storage (needs only a Google account). |
+| [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/) | A free game you play over SSH — perfect extra practice for Modules 1 and 3. |
+
+> Honest limit: browser terminals are great for Modules 1–4 (commands, files, text, Bash). For the **services lesson** and the **capstone** you want a real VM — the free local install above is enough.
+
+## 📖 How to use this repo
+
+1. Open the **module → lesson** folder for the video you're watching.
+2. Follow along with the commands in the lesson `README.md`.
+3. Grab the **cheat sheet** and any `scripts/` you want to keep.
+4. Try the **practice challenge** at the end of each lesson.
 
 ## ✅ Prerequisites
 
