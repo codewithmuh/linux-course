@@ -45,6 +45,17 @@ kill -9 <pid>       # SIGKILL (last resort)
 pkill -f myscript
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `ps` | **p**rocess **s**tatus |
+| `top` | **t**able **o**f **p**rocesses |
+| `htop` | **H**isham's **top** — written by Hisham Muhammad |
+| PID | **p**rocess **ID** |
+| `bg` / `fg` | **b**ack**g**round / **f**ore**g**round |
+| SIGTERM / SIGKILL | **sig**nal **term**inate / **sig**nal **kill** |
+
 ## In production
 When a process goes out of control and eats 100% CPU, you find it in `top`, confirm it with `ps aux | grep`, and send it SIGTERM. Only if it will not stop do you escalate to SIGKILL. You will repeat this exact fix many times in real work.
 

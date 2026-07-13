@@ -21,6 +21,11 @@ flowchart LR
 # annotated, copy-paste-ready
 ```
 
+## What the names mean
+| Command | Stands for |
+|---|---|
+| `cmd` | **c**o**m**man**d** — expand the abbreviation so it is easy to remember |
+
 ## In production
 <How this is actually used on the job — a concrete, real-world scenario.>
 

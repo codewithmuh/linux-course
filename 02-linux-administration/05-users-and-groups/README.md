@@ -47,6 +47,18 @@ getent group sudo
 sudo -u deploy whoami
 ```
 
+## What the names mean
+Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
+
+| Command | Stands for |
+|---|---|
+| `sudo` | **s**uper**u**ser **do** — run one command as the all-powerful root user |
+| `useradd` | **user add** |
+| `usermod` | **user mod**ify |
+| `passwd` | **passw**or**d** |
+| `id` | **id**entity — your user and group numbers |
+| `-aG` | **a**ppend to **G**roups (add, don't replace) |
+
 ## In production
 Standard server hardening creates a non-root `deploy` user, gives it sudo, and disables direct root SSH login. Apps and CI pipelines connect as `deploy`, never as root — so no single compromised login owns the whole box.
 

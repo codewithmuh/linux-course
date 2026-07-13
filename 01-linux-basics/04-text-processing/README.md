@@ -39,6 +39,16 @@ sed -i 's/localhost/127.0.0.1/g' config.ini
 sed -n '10,20p' file.txt                                          # print a line range
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `wc` | **w**ord **c**ount |
+| `uniq` | **uniq**ue |
+| `sed` | **s**tream **ed**itor |
+| `awk` | the initials of its three creators: **A**ho, **W**einberger, **K**ernighan |
+| `cut` / `sort` / `paste` | plain English — they do exactly what they say |
+
 ## In production
 Parse an Nginx access log to find the top 10 client IPs and the most-requested URLs — a one-liner that answers "where is all this traffic coming from?" in seconds, with no extra tools.
 

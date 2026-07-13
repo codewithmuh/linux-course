@@ -41,6 +41,16 @@ sudo yum install -y git          # older systems
 rpm -qa | grep git
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `apt` | **A**dvanced **P**ackage **T**ool |
+| `dpkg` | **D**ebian **p**ac**k**a**g**e |
+| `yum` | **Y**ellowdog **U**pdater, **M**odified |
+| `dnf` | **D**andified **YUM** — the newer yum |
+| `rpm` | **R**ed Hat **P**ackage **M**anager |
+
 ## In production
 `apt update && apt install ...` is the first lines of nearly every server bootstrap script, Dockerfile, and Ansible playbook. It's how a bare base image picks up the exact tools it needs before anything else runs.
 

@@ -40,6 +40,16 @@ ls -l /etc > etc-listing.txt          # overwrite a file
 echo "deploy done" >> deploy.log      # append to a file
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `cat` | con**cat**enate — joins files together |
+| `less` | a joke on the older pager `more` — "less is more" |
+| `grep` | **g**lobal **r**egular **e**xpression **p**rint — search text by pattern |
+| `vim` | **V**i **im**proved — the modern version of the old editor `vi` |
+| `stdin` / `stdout` / `stderr` | **st**an**d**ard **in**put / **out**put / **err**or |
+
 ## In production
 `tail -f` an application log while you reproduce a bug, then `grep -i error` to jump straight to the failing line. That combination is how most production problems get found.
 

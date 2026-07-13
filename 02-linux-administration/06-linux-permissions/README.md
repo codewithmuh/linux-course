@@ -44,6 +44,16 @@ chmod g+s shared/                # SGID: new files inherit the group
 ls -ld /tmp                      # sticky bit 't'
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `chmod` | **ch**ange **mod**e — "mode" is the permission set |
+| `chown` | **ch**ange **own**er |
+| `chgrp` | **ch**ange **gr**ou**p** |
+| `rwx` | **r**ead · **w**rite · e**x**ecute |
+| SUID / SGID | **S**et **U**ser **ID** / **S**et **G**roup **ID** |
+
 ## In production
 Permissions explain the everyday puzzles: an app can't read its config because the owner is wrong, an SSH key is rejected until you `chmod 600` it, and a shared team directory uses SGID so every teammate can collaborate on the files without fighting over ownership.
 

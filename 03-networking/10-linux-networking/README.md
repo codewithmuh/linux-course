@@ -42,6 +42,16 @@ cat /etc/hosts
 cat /etc/resolv.conf                 # which DNS servers
 ```
 
+## What the names mean
+
+| Name | Stands for |
+|---|---|
+| IP | **I**nternet **P**rotocol |
+| DNS | **D**omain **N**ame **S**ystem |
+| `ping` | named after the "ping" sound of submarine sonar — send a signal, wait for the echo |
+| `curl` | **c**lient for **URL**s |
+| `wget` | **w**eb **get** |
+
 ## In production
 You health-check an API straight from the server: `curl -I` to confirm it's up and returning 200, `ping` to confirm the host is reachable, and `ip addr` to confirm the box's own address.
 

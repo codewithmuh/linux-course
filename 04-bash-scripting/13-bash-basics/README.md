@@ -49,6 +49,15 @@ chmod +x hello.sh
 ./hello.sh Rashid     # takes the name as an argument
 ```
 
+## What the names mean
+
+| Name | Stands for |
+|---|---|
+| `bash` | **B**ourne **A**gain **SH**ell — a pun: the original shell was written by Steve Bourne |
+| shebang `#!` | "sharp" (`#`) + "bang" (`!`) |
+| `echo` | prints back what you give it — like an echo |
+| `read` | reads what the user types |
+
 ## In production
 Your very first useful script is a tiny status checker: it asks whether a service is running and prints a clear answer. That pattern — check something, report it plainly — is the seed of every health-check and bootstrap script you'll write later.
 

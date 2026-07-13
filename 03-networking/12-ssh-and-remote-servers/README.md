@@ -43,6 +43,16 @@ sftp prod           # interactive: put / get
 # hardening (server side): disable password + root login in /etc/ssh/sshd_config
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `ssh` | **S**ecure **Sh**ell |
+| `scp` | **s**ecure **c**o**p**y |
+| `sftp` | **S**SH **F**ile **T**ransfer **P**rotocol |
+| `ssh-keygen` | SSH **key gen**erator |
+| `ed25519` | the name of the math curve the key uses — just pick it, it is the modern default |
+
 ## In production
 You set up passwordless key-based access to a production box, add a `~/.ssh/config` alias so `ssh prod` just works, and `scp` a build artifact up for deployment.
 

@@ -47,6 +47,28 @@ find . -type d                    # only directories
 find . -mtime -1                  # changed in the last day
 ```
 
+## What the names mean
+Commands:
+
+| Command | Stands for |
+|---|---|
+| `pwd` | **p**rint **w**orking **d**irectory |
+| `ls` | **l**i**s**t |
+| `cd` | **c**hange **d**irectory |
+| `mkdir` | **m**a**k**e **dir**ectory |
+| `cp` / `mv` / `rm` | **c**o**p**y / **m**o**v**e / **r**e**m**ove |
+| `touch` | not an abbreviation — it "touches" a file: creates it empty, or updates its date |
+
+And the folder names:
+
+| Folder | Stands for |
+|---|---|
+| `/etc` | "et cetera" (an old name) — today it means: system config files |
+| `/var` | **var**iable data — files that grow, like logs |
+| `/usr` | **U**nix **s**ystem **r**esources — installed software |
+| `/tmp` | **t**e**mp**orary files |
+| `/bin` | **bin**aries — the programs themselves |
+
 ## In production
 Debugging a service is mostly navigation: `cd /etc/nginx` to read the config, `cd /var/log/nginx` to read the logs. Knowing **where things live** is half the job.
 

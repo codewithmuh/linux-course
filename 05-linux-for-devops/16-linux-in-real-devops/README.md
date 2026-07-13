@@ -59,6 +59,17 @@ tar -xzf logs.tar.gz -C /tmp/restore    # extract it somewhere
 gzip big.log && gunzip big.log.gz       # compress / decompress a single file
 ```
 
+## What the names mean
+
+| Name | Stands for |
+|---|---|
+| cron | from the Greek word *chronos* — time |
+| `crontab` | **cron tab**le — your list of scheduled jobs |
+| `df` | **d**isk **f**ree |
+| `du` | **d**isk **u**sage |
+| `tar` | **t**ape **ar**chive — from the days of tape backups |
+| `gzip` | **G**NU **zip** |
+
 ## In production
 You schedule your Module 4 scripts with cron so the health check runs on its own every 15 minutes. When a disk alert fires, you track down what filled `/var` with `du -sh /var/* | sort -rh`, then archive the old logs with `tar` to reclaim the space. That measure-then-clean loop is the everyday maintenance of a real server.
 

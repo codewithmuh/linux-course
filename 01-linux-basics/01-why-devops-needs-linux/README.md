@@ -93,6 +93,17 @@ uname -a
 exit                           # back to your machine
 ```
 
+## What the names mean
+Most Linux commands are short forms of English words — once you know the full words, they are easy to remember:
+
+| Command | Stands for |
+|---|---|
+| `ssh` | **S**ecure **Sh**ell — an encrypted connection to another machine |
+| `wsl` | **W**indows **S**ubsystem for **L**inux |
+| `uname` | **U**nix **name** — prints system information |
+| `cat` | con**cat**enate — joins files; also the quick way to print one |
+| `whoami` | literally "who am I" — prints your username |
+
 ## In production
 Launch a cloud VM (AWS EC2, DigitalOcean, etc.), then connect with `ssh user@ip`. From that moment, everything you do — installing software, deploying apps, reading logs — happens over this connection. Getting comfortable here is step zero of DevOps.
 

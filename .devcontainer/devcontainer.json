@@ -1,0 +1,10 @@
+{
+  "name": "Linux course playground",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y htop tree jq ncdu dnsutils traceroute netcat-openbsd",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    }
+  }
+}

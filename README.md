@@ -4,9 +4,9 @@
 
 **The hands-on course that takes you from `whoami` to deploying a production server.**
 
-The companion repository for the **Linux for DevOps** course on YouTube by [@devopsbymuh](https://youtube.com/@codewithmuh).
+The companion repository for the **Linux for DevOps** course on YouTube by [@devopsbymuh](https://www.youtube.com/@devopsbymuh).
 
-[![YouTube](https://img.shields.io/badge/YouTube-@devopsbymuh-FF0000?logo=youtube&logoColor=white)](https://youtube.com/@codewithmuh)
+[![YouTube](https://img.shields.io/badge/YouTube-@devopsbymuh-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/@devopsbymuh)
 [![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![Platform: Linux](https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux&logoColor=black)](https://kernel.org)
 ![Level: Beginner → Production](https://img.shields.io/badge/Level-Beginner%20%E2%86%92%20Production-blue)
@@ -29,6 +29,7 @@ Watch the videos to **learn**, then use this repo as your **reference**: concept
 - [Course content](#-course-content)
 - [Module maps](#-module-maps)
 - [Getting started](#-getting-started)
+- [Practice online — no install](#-practice-online--no-install)
 - [How to use this repo](#-how-to-use-this-repo)
 - [Prerequisites](#-prerequisites)
 - [Roadmap](#-roadmap)
@@ -144,6 +145,19 @@ No Linux machine yet? **Start with a free local install — no cloud account nee
 
 > ⚠️ The macOS Terminal looks similar, but **macOS is not Linux** — commands like `apt` and `systemctl` do not exist there. For this course, work inside Ubuntu: WSL, Multipass, or a cloud VM.
 
+## 🕹️ Practice online — no install
+
+Don't want to touch your own computer yet? Practice Linux **in the browser**:
+
+| Option | What you get |
+|---|---|
+| **GitHub Codespaces** — on this repo, click **Code → Codespaces → Create codespace** | A real Ubuntu terminal in the browser, with all course files already in it. Free monthly hours on every GitHub account. |
+| [Killercoda Ubuntu playground](https://killercoda.com/playgrounds/scenario/ubuntu) | A fresh Ubuntu machine for 1 hour, with root access — services and `systemctl` work here too. |
+| [Google Cloud Shell](https://shell.cloud.google.com) | A free Linux shell with 5 GB of storage (needs only a Google account). |
+| [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/) | A free game you play over SSH — perfect extra practice for Modules 1 and 3. |
+
+> Honest limit: browser terminals are great for Modules 1–4 (commands, files, text, Bash). For the **services lesson** and the **capstone** you want a real VM — the free local install above is enough.
+
 ## 📖 How to use this repo
 
 1. Open the **module → lesson** folder for the video you're watching.
@@ -167,12 +181,12 @@ Linux is the first tool in a larger DevOps journey. Coming next on the channel:
 
 Spotted a typo or a better example? Issues and PRs are welcome. 🙌
 
-If this course helped you, consider **starring ⭐ the repo** and **subscribing on [YouTube](https://youtube.com/@codewithmuh)** — it genuinely helps.
+If this course helped you, consider **starring ⭐ the repo** and **subscribing on [YouTube](https://www.youtube.com/@devopsbymuh)** — it genuinely helps.
 
 ---
 
 <div align="center">
 
-Built with 🐧 by [@codewithmuh](https://youtube.com/@codewithmuh)
+Built with 🐧 by [@devopsbymuh](https://www.youtube.com/@devopsbymuh)
 
 </div>

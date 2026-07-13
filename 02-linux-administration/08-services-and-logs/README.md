@@ -46,6 +46,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now hello.service
 ```
 
+## What the names mean
+
+| Command | Stands for |
+|---|---|
+| `systemd` | **system** **d**aemon — a *daemon* is a program that runs in the background |
+| `systemctl` | **system** **c**on**t**ro**l** |
+| `journalctl` | **journal** **c**on**t**ro**l** — the journal is systemd's log book |
+
 ## In production
 You run a Python or Node app as a managed service so it survives crashes and reboots, then tail its logs live with `journalctl -u myapp -f` while a deploy goes out — watching for errors as the new version comes up.
 
