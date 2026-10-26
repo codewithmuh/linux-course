@@ -6,14 +6,28 @@
 
 The companion repository for the **Linux for DevOps** course on YouTube by [@devopsbymuh](https://www.youtube.com/@devopsbymuh).
 
-[![YouTube](https://img.shields.io/badge/YouTube-@devopsbymuh-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/@devopsbymuh)
-[![Made with Bash](https://img.shields.io/badge/Made%20with-Bash-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![Platform: Linux](https://img.shields.io/badge/Platform-Linux-FCC624?logo=linux&logoColor=black)](https://kernel.org)
-![Level: Beginner → Production](https://img.shields.io/badge/Level-Beginner%20%E2%86%92%20Production-blue)
-![Lessons](https://img.shields.io/badge/Lessons-18-orange)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/codewithmuh/linux-course/releases"><img src="https://img.shields.io/github/v/release/codewithmuh/linux-course?color=blue&label=version&style=flat-square" alt="GitHub Release"></a>
+  <a href="https://github.com/codewithmuh/linux-course/stargazers"><img src="https://img.shields.io/github/stars/codewithmuh/linux-course?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/codewithmuh/linux-course/network/members"><img src="https://img.shields.io/github/forks/codewithmuh/linux-course?style=flat-square" alt="Forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"></a>
+  <a href="https://www.youtube.com/@devopsbymuh"><img src="https://img.shields.io/badge/YouTube-%40devopsbymuh-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube"></a>
+  <br>
+  <img src="https://img.shields.io/badge/Made%20with-Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white" alt="Made with Bash">
+  <img src="https://img.shields.io/badge/Platform-Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Platform: Linux">
+  <img src="https://img.shields.io/badge/Level-Beginner%20%E2%86%92%20Production-blue?style=flat-square" alt="Level: Beginner -> Production">
+  <img src="https://img.shields.io/badge/Lessons-18%20Interactive%20Labs-orange?style=flat-square" alt="Lessons">
+</p>
 
 </div>
+
+```mermaid
+flowchart LR
+    M1["01. Linux Basics<br/>(Files, Permissions, Navigation)"] --> M2["02. Administration<br/>(Users, Processes, Systemd)"]
+    M2 --> M3["03. Networking<br/>(DNS, Ports, SSH, Firewalls)"]
+    M3 --> M4["04. Bash Scripting<br/>(Automation, Logic, CI Hooks)"]
+    M4 --> M5["05. Linux for DevOps<br/>(Docker, Nginx, Production Hardening)"]
+```
 
 ---
 
